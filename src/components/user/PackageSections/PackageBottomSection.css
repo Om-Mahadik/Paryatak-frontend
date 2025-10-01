@@ -1,0 +1,66 @@
+.package-bottom-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0;
+  position: relative;
+}
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 24px;
+}
+
+/* Individual tab button */
+.tab-btn {
+  padding: 10px 16px;
+  font-size: 1rem;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tab-btn:hover {
+  color: #000;
+}
+
+.tab-btn.active {
+  color: #000;
+}
+
+/* Sliding underline */
+.tab-underline {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: #000;
+  transition: left 0.3s, width 0.3s;
+  border-radius: 2px;
+}
+
+/* Tab content wrapper with fade animation */
+.tab-content {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.tab-content.fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

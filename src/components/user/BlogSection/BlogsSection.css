@@ -1,0 +1,43 @@
+.blogs-section {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.blogs-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Flex grid layout */
+.blogs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Each blog card wrapper for responsive widths */
+.blog-card-wrapper {
+  flex: 1 1 30%; /* ~3 cards per row */
+  max-width: 350px; /* ensures it doesn’t get too wide */
+  min-width: 250px; /* ensures it doesn’t shrink too much */
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 900px) {
+  .blog-card-wrapper {
+    flex: 1 1 45%; /* ~2 cards per row */
+  }
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 600px) {
+  .blog-card-wrapper {
+    flex: 1 1 90%; /* ~1 card per row */
+  }
+}

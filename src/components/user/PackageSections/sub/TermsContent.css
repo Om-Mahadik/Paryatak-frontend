@@ -1,0 +1,13 @@
+.terms-content {
+  font-size: 0.95rem;
+  color: #666; /* grey text */
+  line-height: 1.6;
+}
+
+.terms-content p {
+  margin-bottom: 12px; /* spacing between paragraphs */
+}
+
+.terms-content strong {
+  color: #333; /* slightly darker for emphasis */
+}

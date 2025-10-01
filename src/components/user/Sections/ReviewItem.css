@@ -1,0 +1,34 @@
+.review-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: left;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.star-icon {
+  width: 22px;
+  height: 22px;
+
+}
+
+.review-comment {
+  color: #111;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.reviewer-name {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: auto;
+}

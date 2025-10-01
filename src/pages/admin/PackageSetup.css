@@ -1,0 +1,160 @@
+.package-setup {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.package-left {
+  flex: 1;
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.package-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.save-btn,
+.delete-btn {
+  padding: 12px 25px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.save-btn {
+  background: #4caf50;
+  color: #fff;
+}
+
+.save-btn:hover {
+  background: #43a047;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #e53935;
+}
+
+/* Media Area */
+.package-media {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.thumbnail-upload,
+.gallery-upload {
+  position: relative;
+  border: 2px dashed #bdbdbd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail-upload:hover,
+.gallery-upload:hover {
+  border-color: #4caf50;
+}
+
+.thumbnail-upload img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.gallery-card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Remove button */
+.gallery-card .remove-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.gallery-card .remove-btn:hover {
+  background: rgba(244, 67, 54, 0.9);
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .package-setup {
+    flex-direction: column;
+  }
+}

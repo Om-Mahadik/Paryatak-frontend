@@ -1,0 +1,85 @@
+.convenience-card {
+  background-color: #fff;
+  border: 1px solid #ddd; /* subtle border */
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 350px; /* adjust width */
+  margin: 0 auto; /* center horizontally */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* soft shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Upcoming Section */
+.next-tour {
+  text-align: center; /* center upcoming text */
+}
+
+.next-tour h3 {
+  font-size: 14px;
+  font-weight: 300;
+  color:#666;
+  margin-bottom: 10px;
+}
+
+/* Contact Us button */
+.btn-contact {
+  width: 100%; /* match card width */
+  padding: 12px 0;
+  background-color: #232323;
+  color: #fff;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Convenience points list */
+.convenience-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.convenience-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Tick icon */
+.tick-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Download brochure button */
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 0;
+  width: 100%;
+  border: 1px solid #ccc; /* light border */
+  background-color: #ffffff;
+  border-radius: 40px;
+  font-size: 13px; /* smaller font */
+  font-weight: 400; /* lighter weight */
+  color: #666; /* grey text */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-download .download-icon {
+  width: 16px;
+  height: 16px;
+  filter: grayscale(100%); /* grey icon */
+}

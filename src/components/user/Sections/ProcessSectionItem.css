@@ -1,0 +1,64 @@
+.process-item {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease, transform 0.5s ease, background-color 0.5s ease;
+  transform: scale(1);
+  z-index: 0;
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.process-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.process-item.active {
+  background-color: #bce6e6; /* Sky Blue */
+  transform: translateY(-10px) scale(1.08); /* Lift & scale */
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.process-icon {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  transition: transform 0.5s ease;
+}
+
+.process-item.active .process-icon {
+  transform: scale(1.2);
+}
+
+.process-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.process-desc {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 480px) {
+  .process-item {
+    padding: 1.5rem;
+  }
+
+  .process-icon {
+    font-size: 2.5rem;
+  }
+
+  .process-title {
+    font-size: 1.125rem;
+  }
+
+  .process-desc {
+    font-size: 0.95rem;
+  }
+}

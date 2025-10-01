@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #111;
+  color: #fff;
+  padding: 40px 120px 20px 120px;
+  font-family: 'DM Sans', sans-serif;
+  gap: 30px;
+}
+
+/* Left Section */
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo {
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.footer-contact {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.footer-contact li img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.footer-contact li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contact li a:hover {
+  color: #ffcc00;
+}
+
+/* Social Links */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.footer-social a img:hover {
+  transform: scale(1.1);
+}
+
+/* Right Section */
+.footer-right {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Side-by-side nav and legal wrapper */
+.footer-links-wrapper {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap; /* allow wrapping if needed on small screens */
+}
+
+.footer-nav-block,
+.footer-legal-block {
+  flex: 1;
+  min-width: 120px; /* ensures side-by-side even on small screens */
+}
+
+.footer-right h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-nav,
+.footer-legal {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav li,
+.footer-legal li {
+  margin-bottom: 8px;
+}
+
+.footer-nav li button,
+.footer-legal li button {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.footer-nav li button:hover,
+.footer-legal li button:hover {
+  color: #ffcc00;
+}
+
+/* Bottom */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  margin-top: 15px;
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 20px;
+  }
+
+  .footer-left, .footer-right {
+    width: 100%;
+  }
+
+  .footer-links-wrapper {
+    flex-direction: row; /* keep side by side */
+    gap: 30px;
+  }
+
+  .footer-bottom {
+    text-align: left;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-links-wrapper {
+    flex-direction: row; /* still side by side */
+    gap: 15px;
+  }
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap');
+
+.upcoming-tours-section {
+  margin: 40px 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.upcoming-tours-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.upcoming-date-left {
+  display: flex;
+  justify-content: flex-start; /* left-align the big pill */
+  margin-bottom: 20px;
+  margin-left: 16px;
+}
+
+.upcoming-tours-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.upcoming-tours-section li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-left: 16px;
+}
+
+/* Month pill */
+.month-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 36px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #111;
+  text-transform: uppercase;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Tour text */
+.tour-text {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upcoming-tours-section h3 {
+    font-size: 18px;
+  }
+
+  .month-pill {
+    font-size: 14px;
+    padding: 5px 12px;
+  }
+
+  .tour-text {
+    font-size: 15px;
+  }
+}

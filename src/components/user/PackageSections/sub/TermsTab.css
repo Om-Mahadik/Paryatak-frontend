@@ -1,0 +1,11 @@
+.terms-tab {
+  width: 90%;
+  margin: 60px auto 40px auto; /* center horizontally, add top margin to bypass navbar */
+}
+
+.terms-tab h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #000; /* black heading */
+}

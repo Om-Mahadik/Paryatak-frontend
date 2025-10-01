@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.blog-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', sans-serif;
+  width: 85vw; /* 85% of viewport width */
+  max-width: 350px;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Image wrapper with padding */
+.blog-img-wrapper {
+  padding: 0.8rem;
+}
+
+/* Large square image */
+.blog-thumbnail {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1; /* 1:1 ratio */
+}
+
+/* Blog content below the image */
+.blog-content {
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Duration with clock icon */
+.blog-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.time-icon {
+  width: 14px;
+  height: 14px;
+}
+
+/* Blog title */
+.blog-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Read More link */
+.blog-readmore {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #28a745;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.blog-readmore:hover {
+  color: #1e7e34;
+}
+
+/* Views and upload date */
+.blog-meta {
+  font-size: 0.75rem; /* smaller font for meta */
+  color: #777;
+}

@@ -1,0 +1,19 @@
+.package-head-section {
+  width: 90%;
+  max-width: 1200px;  /* optional max width */
+  margin: 100px auto 0;  /* top margin to bypass navbar, auto horizontal centers */
+  display: flex;
+  justify-content: center; /* horizontally center the whole content */
+  gap: 24px;
+  padding: 32px 0;
+  align-items: center; /* vertically center thumbnail and details */
+}
+
+@media (max-width: 768px) {
+  .package-head-section {
+    flex-direction: column;
+    margin-top: 120px;
+    align-items: center;  /* center content horizontally */
+    text-align: center;
+  }
+}

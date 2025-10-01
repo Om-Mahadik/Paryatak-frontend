@@ -1,0 +1,47 @@
+.gallery-tab {
+  width: 90%;
+  margin: 80px auto; /* top spacing for nav */
+}
+
+.gallery-tab h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Pinterest-style masonry layout */
+.gallery-container {
+  column-count: 3;       /* 3 columns desktop */
+  column-gap: 15px;      /* horizontal gap */
+}
+
+.gallery-item {
+  break-inside: avoid;   /* prevents breaking inside columns */
+  margin-bottom: 15px;   /* vertical gap */
+}
+
+.gallery-item img {
+  width: 100%;           /* fill column width */
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gallery-container {
+    column-count: 2;     /* 2 columns tablet */
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-container {
+    column-count: 1;     /* 1 column mobile */
+  }
+}

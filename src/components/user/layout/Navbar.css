@@ -1,0 +1,194 @@
+/* ============================= */
+/* Navbar Base Styles */
+/* ============================= */
+.navbar {
+  position: absolute;
+  top: 30px; /* space from top */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center; /* vertical centering */
+  justify-content: space-between;
+  width: 90%;
+  max-width: 90%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  z-index: 100;
+  transition: all 0.5s ease; /* smooth animation for hover/movement */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
+}
+
+/* ============================= */
+/* Navbar Variants */
+/* ============================= */
+.navbar-home {
+  background: rgba(81, 81, 81, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+}
+
+.navbar-dark {
+  background: #ffffff; /* white background */
+  color: #000000;      /* black text */
+  backdrop-filter: none;
+}
+
+/* ============================= */
+/* Logo */
+/* ============================= */
+.logo img {
+  height: 20px;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.navbar-dark .logo img {
+  filter: invert(1); /* make white logo black */
+}
+
+/* ============================= */
+/* Navigation links */
+/* ============================= */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.nav-links li a {
+  color: inherit; /* inherits color from navbar variant */
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #ffcc00; /* hover color */
+}
+
+/* ============================= */
+/* Desktop Contact Button */
+/* ============================= */
+.contact-btn-layout {
+  padding: 10px 20px;
+  background: rgba(35, 35, 35, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-btn-layout:hover {
+  background: rgba(13, 13, 13, 0.35);
+}
+
+/* ============================= */
+/* Mobile menu icon */
+/* ============================= */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  transition: filter 0.3s ease;
+}
+
+.navbar-dark .menu-icon img {
+  filter: invert(1); /* make white svg black */
+}
+
+/* ============================= */
+/* Mobile Contact Button in Dropdown */
+/* ============================= */
+.mobile-contact-btn {
+  display: none; /* hidden in desktop */
+}
+
+@media (max-width: 768px) {
+  /* Mobile menu dropdown */
+  .nav-links {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Home page mobile menu */
+  .navbar-home .nav-links {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .navbar-home .nav-links li a {
+    color: white;
+  }
+
+  /* Dark page mobile menu */
+  .navbar-dark .nav-links {
+    background: #ffffff;
+  }
+
+  .navbar-dark .nav-links li a {
+    color: #000000;
+  }
+
+  .nav-links.open {
+    max-height: 500px;
+    padding: 20px 0;
+  }
+
+  /* Show mobile contact inside dropdown */
+  .mobile-contact-btn {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .mobile-contact-btn a {
+    display: block;
+    padding: 10px 30px;
+    background: rgba(52, 200, 14, 0.25);
+    border-radius: 50px;
+    border-color: #9c9c9c;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+
+  .mobile-contact-btn a:hover {
+    background: rgba(13, 13, 13, 0.35);
+  }
+
+  /* Hide desktop contact button in mobile */
+  .contact-btn-layout {
+    display: none;
+  }
+
+  /* Show menu icon */
+  .menu-icon {
+    display: block;
+  }
+}

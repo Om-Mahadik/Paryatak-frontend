@@ -1,0 +1,72 @@
+.access-button {
+  position: fixed;
+  right: 25px;
+  bottom: 30px; /* lifted a bit from bottom */
+  display: flex;
+  align-items: center;
+  background-color: #111; /* almost black */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+  font-weight: 500;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.access-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.access-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.7rem;
+}
+
+.access-text {
+  font-size: 1rem;
+}
+
+/* Medium screens (tablet) */
+@media (max-width: 768px) {
+  .access-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.05rem;
+    right: 20px;
+    bottom: 25px; /* slightly lifted */
+  }
+
+  .access-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0.6rem;
+  }
+
+  .access-text {
+    font-size: 1.05rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .access-button {
+    padding: 0.6rem 1.2rem; /* smaller button */
+    font-size: 0.95rem;
+    right: 15px;
+    bottom: 20px; /* lifted from edge */
+  }
+
+  .access-icon {
+    width: 24px; /* smaller icon */
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+
+  .access-text {
+    font-size: 0.95rem; /* smaller text but visible */
+  }
+}

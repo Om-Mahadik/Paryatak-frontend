@@ -1,0 +1,105 @@
+.contact-form {
+  width: 50%; /* default width for desktop */
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: "DM Sans", sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* Two-column row */
+.form-row {
+  display: flex;
+  gap: 22px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #777; /* light grey */
+}
+
+input,
+textarea {
+  padding: 12px 14px;
+  border: 1px solid #ddd; /* thin border */
+  border-radius: 10px;
+  background: #f7f7f7; /* soft grey */
+  font-size: 15px;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out, border 0.2s ease;
+  color: #333;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #aaa; /* light grey placeholder */
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px #0077ff33;
+  border-color: #aaa;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 14px 0;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #000;
+  transform: scale(1.02);
+}
+
+/* Success message as soft green pill */
+.success-msg {
+  margin-top: 12px;
+  padding: 12px 18px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 50px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%; /* almost full width on phone */
+    padding: 25px 20px;
+  }
+
+  .form-row {
+    flex-direction: column; /* stack first + last name vertically */
+    gap: 15px;
+  }
+}

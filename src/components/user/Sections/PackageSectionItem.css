@@ -1,0 +1,107 @@
+.package-card {
+  background: white;
+  border-radius: 20px; /* increased */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* deeper shadow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  padding: 20px;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Square image inside card with spacing */
+.package-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 18px; /* match bigger radius */
+  margin-bottom: 15px;
+}
+
+.package-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left; /* all text aligned left */
+}
+
+.package-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.package-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  text-align: left;
+}
+
+/* bigger stars with less gap */
+.package-rating {
+  display: flex;
+  gap: 2px; /* reduced space */
+}
+
+.star-icon {
+  width: 20px;  /* increased size */
+  height: 20px;
+}
+
+.package-location {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.pin-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.package-description {
+  margin-top: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+  flex-grow: 1;
+  text-align: left;
+}
+
+/* smaller button pinned at bottom */
+.know-more-btn {
+  margin-top: auto;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: black;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.know-more-btn:hover {
+  background: #333;
+}
+
+.arrow-icon {
+  width: 14px;
+  height: 14px;
+}

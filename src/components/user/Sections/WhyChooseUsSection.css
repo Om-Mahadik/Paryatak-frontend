@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
 .why-choose-us {
-  padding: 100px 20px;
+  padding: 20px 20px;
   text-align: center;
   background: white;
-  font-family: inherit;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .section-heading {
@@ -76,9 +78,10 @@
   }
 }
 
+/* ✅ Use DM Sans everywhere */
 .why-choose-us .section-heading,
 .why-choose-us .section-subheadline,
 .why-choose-us .feature-title,
 .why-choose-us .feature-subtitle {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }

@@ -7,6 +7,12 @@ import UserLayout from "./components/user/layout/UserLayout";
 import ContactUs from "./pages/Contact";
 import UserPackages from "./pages/Packages"; // Renamed for user
 import DubaiPackage from "./pages/Packages/DubaiPackage";
+import BaliPackage from "./pages/Packages/BaliPackage";
+import VietnamPackage from "./pages/Packages/VietnamPackage";
+import SriLankaPackage from "./pages/Packages/SriLankaPackage";
+import GoldenTrianglePackage from "./pages/Packages/GoldenTrianglePackage";
+import HampiPackage from "./pages/Packages/HampiPackage";
+import BangaloreMysoreOotyPackage from "./pages/Packages/BangaloreMysoreOotyPackage";
 import Blogs from "./pages/Blogs";
 import BlogPage from "./pages/BlogPage";
 
@@ -69,14 +75,13 @@ function App() {
         />
         <Route path="/blogs/:id" element={<UserLayout><BlogPage /></UserLayout>} />
 
-        <Route
-          path="/packages/dubai"
-          element={
-            <UserLayout>
-              <DubaiPackage />
-            </UserLayout>
-          }
-        />
+        <Route path="/packages/dubai" element={<UserLayout><DubaiPackage /></UserLayout>} />
+        <Route path="/packages/bali" element={<UserLayout><BaliPackage /></UserLayout>} />
+        <Route path="/packages/vietnam" element={<UserLayout><VietnamPackage /></UserLayout>} />
+        <Route path="/packages/sri-lanka" element={<UserLayout><SriLankaPackage /></UserLayout>} />
+        <Route path="/packages/golden-triangle" element={<UserLayout><GoldenTrianglePackage /></UserLayout>} />
+        <Route path="/packages/hampi" element={<UserLayout><HampiPackage /></UserLayout>} />
+        <Route path="/packages/bangalore-mysore-ooty" element={<UserLayout><BangaloreMysoreOotyPackage /></UserLayout>} />
 
         <Route
           path="/legal/privacy-policy"

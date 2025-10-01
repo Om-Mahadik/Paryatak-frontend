@@ -16,8 +16,9 @@ const Home = () => {
       <PackagesSection />
       <WhyChooseUsSection />
       <OurProcessSection />
-      <FAQSection />
       <ReviewsSection />
+      <FAQSection />
+
     </>
   );
 };

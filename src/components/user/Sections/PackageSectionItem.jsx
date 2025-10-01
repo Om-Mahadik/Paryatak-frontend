@@ -1,10 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./PackageSectionItem.css";
 import pinIcon from "../../../imgs/icons/pin.svg";
 import arrowIcon from "../../../imgs/icons/arrow-notail.svg";
 import starIcon from "../../../imgs/icons/star.svg";
 
-const PackageSectionItem = ({ title, country, description, thumbnail, rating }) => {
+const PackageSectionItem = ({ title, country, description, thumbnail, rating, link }) => {
+  const navigate = useNavigate();
+
+  const handleKnowMore = () => {
+    if (link) {
+      window.scrollTo(0, 0); // Scroll to top before navigation
+      navigate(link);
+    }
+  };
+
   return (
     <div className="package-card">
       {/* Image */}
@@ -28,7 +38,7 @@ const PackageSectionItem = ({ title, country, description, thumbnail, rating }) 
 
         <p className="package-description">{description}</p>
 
-        <button className="know-more-btn">
+        <button className="know-more-btn" onClick={handleKnowMore}>
           Know More
           <img src={arrowIcon} alt="arrow" className="arrow-icon" />
         </button>

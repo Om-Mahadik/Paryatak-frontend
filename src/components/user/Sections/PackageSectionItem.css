@@ -8,6 +8,8 @@
   justify-content: space-between;
   transition: transform 0.3s ease;
   padding: 20px;
+  margin-bottom: 40px;
+  margin-top: 40px;
 }
 
 .package-card:hover {

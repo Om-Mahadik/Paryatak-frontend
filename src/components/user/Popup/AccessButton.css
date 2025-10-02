@@ -1,43 +1,112 @@
-.access-button {
+/* Wrapper to stack buttons vertically */
+.access-buttons-wrapper {
   position: fixed;
   right: 25px;
-  bottom: 30px; /* lifted a bit from bottom */
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+/* Shared button styles */
+.access-button {
   display: flex;
   align-items: center;
-  background-color: #111; /* almost black */
-  color: #fff;
+  justify-content: center;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   text-decoration: none;
   font-weight: 500;
-  z-index: 1000;
-  transition: all 0.3s ease;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; /* needed for hover animation */
 }
 
+/* Hover effect */
 .access-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* Icons */
 .access-icon {
   width: 28px;
   height: 28px;
   margin-right: 0.7rem;
+  z-index: 2;
 }
 
+/* Text */
 .access-text {
   font-size: 1rem;
+  z-index: 2;
+  position: relative;
 }
 
-/* Medium screens (tablet) */
+/* Call Now button specific - glass effect */
+.call-now {
+  background-color: rgba(186, 228, 186, 0.5);
+  color: #000;
+  border: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* WhatsApp button specific - premium animated green glass effect */
+.whatsapp-btn {
+  background-color: rgba(37, 211, 102, 0.5); /* initial glass green */
+  color: #fff;
+  border: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* start from below */
+  width: 100%;
+  height: 100%;
+  background-color: #25d366; /* WhatsApp green */
+  z-index: 1;
+  transition: all 0.5s ease;
+  border-radius: 50px;
+}
+
+.whatsapp-btn:hover::before {
+  bottom: 0; /* animate fill from bottom to top */
+}
+
+/* Text and icon stay above overlay */
+.whatsapp-btn .access-text,
+.whatsapp-btn .access-icon {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
+}
+
+.whatsapp-btn:hover .access-text {
+  color: #fff;
+}
+
+/* Medium screens */
 @media (max-width: 768px) {
+  .access-buttons-wrapper {
+    right: 20px;
+    bottom: 25px;
+    gap: 10px;
+  }
+
   .access-button {
     padding: 0.9rem 1.8rem;
     font-size: 1.05rem;
-    right: 20px;
-    bottom: 25px; /* slightly lifted */
   }
 
   .access-icon {
@@ -51,22 +120,26 @@
   }
 }
 
-/* Small screens (phones) */
+/* Small screens */
 @media (max-width: 480px) {
-  .access-button {
-    padding: 0.6rem 1.2rem; /* smaller button */
-    font-size: 0.95rem;
+  .access-buttons-wrapper {
     right: 15px;
-    bottom: 20px; /* lifted from edge */
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .access-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 
   .access-icon {
-    width: 24px; /* smaller icon */
+    width: 24px;
     height: 24px;
     margin-right: 0.5rem;
   }
 
   .access-text {
-    font-size: 0.95rem; /* smaller text but visible */
+    font-size: 0.95rem;
   }
 }

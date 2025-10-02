@@ -21,24 +21,24 @@ const ContactInfo = () => {
       </p>
 
       {/* Contact items with pastel pill background */}
-      <a href="mailto:info@goparyatak.com" className="contact-item email-pill">
+      <a href="mailto:travelsparyatak@gmail.com" className="contact-item email-pill">
         <img src={emailIcon} alt="Email" />
-        <span>info@goparyatak.com</span>
+        <span>travelsparyatak@gmail.com</span>
       </a>
 
-      <a href="tel:+917841805093" className="contact-item phone-pill">
+      <a href="tel:+918999428110" className="contact-item phone-pill">
         <img src={phoneIcon} alt="Phone" />
-        <span>+91 78418 05093</span>
+        <span>+91 89994 28110</span>
       </a>
 
-      <a href="https://www.goparyatak.com" target="_blank" rel="noreferrer" className="contact-item web-pill">
+      <a href="https://www.helloparyatak.com" target="_blank" rel="noreferrer" className="contact-item web-pill">
         <img src={webIcon} alt="Website" />
-        <span>www.goparyatak.com</span>
+        <span>www.helloparyatak.com</span>
       </a>
 
       {/* Social links */}
       <div className="social-links">
-        <a href="https://wa.me/917841805093" target="_blank" rel="noreferrer">
+        <a href="https://wa.me/918999428110" target="_blank" rel="noreferrer">
           <img src={whatsappIcon} alt="WhatsApp" />
         </a>
         <a href="https://instagram.com/goparyatak" target="_blank" rel="noreferrer">

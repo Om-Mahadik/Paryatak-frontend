@@ -1,13 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ import useNavigate
 import "./ConvenienceCard.css";
 import TickIcon from "../../../../imgs/icons/tick.svg";
 import DownloadIcon from "../../../../imgs/icons/download.svg";
-import UpcomingDate from "./UpcomingDate"; // adjust path
+import UpcomingDate from "./UpcomingDate";
 
 const ConvenienceCard = ({ nextTour, brochureLink }) => {
+  const navigate = useNavigate(); // initialize navigate
+
   if (!nextTour) return null;
 
-  // Static 6 lines example
   const conveniencePoints = [
     "Round trip airfare included",
     "5-star accommodation",
@@ -17,13 +19,26 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
     "Professional tour guide",
   ];
 
-  // Helper to format date as "D MMM YYYY"
   const formatDate = (dateStr) => {
     const dateObj = new Date(dateStr);
     const day = dateObj.getDate();
     const monthShort = dateObj.toLocaleString("default", { month: "short" });
     const year = dateObj.getFullYear();
     return `${day} ${monthShort} ${year}`;
+  };
+
+  // Opens brochure in a new tab
+  const handleDownload = () => {
+    if (!brochureLink) {
+      alert("Brochure link not available");
+      return;
+    }
+    window.open(brochureLink, "_blank", "noopener,noreferrer");
+  };
+
+  // Navigate to contact page
+  const handleContact = () => {
+    navigate("/contact"); // change to your contact route
   };
 
   return (
@@ -40,7 +55,9 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
       </div>
 
       {/* Contact Us Button */}
-      <button className="btn-contact">Contact Us</button>
+      <button className="btn-contact" onClick={handleContact}>
+        Contact Us
+      </button>
 
       {/* Convenience Points */}
       <ul className="convenience-points">
@@ -53,15 +70,10 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
       </ul>
 
       {/* Download Brochure */}
-      <a
-        href={brochureLink}
-        download="Dubai_Package_Brochure.pdf" // default file name
-        className="btn-download"
-      >
+      <button className="btn-download" onClick={handleDownload}>
         <img src={DownloadIcon} alt="Download" className="download-icon" />
         Download Brochure
-      </a>
-            
+      </button>
     </div>
   );
 };

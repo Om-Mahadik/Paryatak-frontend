@@ -72,7 +72,7 @@ export const hampiBadamiPackage = {
   ],
 
   brochure:
-    "https://firebasestorage.googleapis.com/v0/b/paryatakadmin.firebasestorage.app/o/packages%2Fhampi_badami_brochure.pdf?alt=media&token=example",
+    "https://firebasestorage.googleapis.com/v0/b/paryatakadmin.firebasestorage.app/o/brochures%2FHAMPI%20%E2%80%93%20BADAMI%20TOUR%20PAKAGE.pdf?alt=media&token=8e4f8ade-933b-4816-b0d7-a782c8fe38ef",
 
   rating: {
     stars: 4.7,

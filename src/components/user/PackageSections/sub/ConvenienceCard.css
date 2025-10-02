@@ -3,7 +3,7 @@
   border: 1px solid #ddd; /* subtle border */
   border-radius: 12px;
   padding: 20px;
-  max-width: 350px; /* adjust width */
+  max-width: 400px; /* adjust width */
   margin: 0 auto; /* center horizontally */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* soft shadow */
   display: flex;

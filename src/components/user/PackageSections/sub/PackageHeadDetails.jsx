@@ -7,19 +7,34 @@ import starIcon from "../../../../imgs/icons/star.svg";
 import phoneIcon from "../../../../imgs/icons/phone.svg";
 import whatsappIcon from "../../../../imgs/icons/whatsapp.svg";
 
-const PackageHeadDetails = () => {
-  const totalReviews = 120;
-  const avgStars = 4.8;
-  const days = 6;
-  const nights = 5;
-  const nextTourDate = "4 to 9 Oct 2025";
+const PackageHeadDetails = ({ data }) => {
+  // Extract values from package data
+  const { 
+    title, 
+    country, 
+    days, 
+    nights, 
+    rating, 
+    groupDates 
+  } = data;
 
-  const phoneNumber = "7841805093";
+  const totalReviews = rating?.reviews || 0;
+  const avgStars = rating?.stars || 0;
+
+  // Get the first upcoming group date
+  const nextTour = groupDates?.[0];
+  const nextTourDate = nextTour 
+    ? `${new Date(nextTour.start).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })} 
+       to 
+       ${new Date(nextTour.end).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}`
+    : "Dates Coming Soon";
+
+  const phoneNumber = "8999428110";
   const countryCode = "91"; // India country code
 
   // WhatsApp prefilled message
   const waMessage = encodeURIComponent(
-    "Hello, I am interested in the Dubai 6 Days / 5 Nights package. Please provide more details."
+    `Hello, I am interested in the ${title} package. Please provide more details.`
   );
   const waLink = `https://wa.me/${countryCode}${phoneNumber}?text=${waMessage}`;
 
@@ -37,12 +52,12 @@ const PackageHeadDetails = () => {
   return (
     <div className="details-wrapper">
       {/* Title */}
-      <h1 className="package-title">Dubai 6 Days / 5 Nights</h1>
+      <h1 className="package-title">{title}</h1>
 
       {/* Country */}
       <p className="package-country">
         <img src={pinIcon} alt="Location" className="icon" />
-        United Arab Emirates
+        {country}
       </p>
 
       {/* Ratings */}
@@ -55,15 +70,15 @@ const PackageHeadDetails = () => {
 
       {/* Duration */}
       <div className="info-block">
-        <p className="label">Duration</p>
+        <p className="label">Duration: </p>
         <p className="value">
-          {days} Days {nights} Nights
+          {nights} Nights {days} Days
         </p>
       </div>
 
       {/* Next Date */}
       <div className="info-block">
-        <p className="label">Next Tour Date</p>
+        <p className="label">Next Tour Date: </p>
         <p className="value">{nextTourDate}</p>
       </div>
 
@@ -74,13 +89,12 @@ const PackageHeadDetails = () => {
           Enquire Now
         </button>
 
-        {/* WhatsApp button styled as btn */}
+        {/* WhatsApp button */}
         <a
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
           className="btn whatsapp-btn"
-          style={{ textDecoration: "none" }} // remove underline
         >
           <img src={whatsappIcon} alt="whatsapp" className="btn-icon" />
           Chat on WhatsApp

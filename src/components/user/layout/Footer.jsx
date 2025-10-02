@@ -26,16 +26,16 @@ const Footer = () => {
         <ul className="footer-contact">
           <li>
             <img src={emailIcon} alt="Email" />
-            <a href="mailto:info@helloparyatak.com">info@helloparyatak.com</a>
+            <a href="mailto:travelsparyatak@gmail.com">travelsparyatak@gmail.com</a>
           </li>
           <li>
             <img src={phoneIcon} alt="Phone" />
-            <a href="tel:+917841805093">+91 78418 05093</a>
+            <a href="tel:+917841805093">+91 89994 28110</a>
           </li>
         </ul>
 
         <div className="footer-social">
-          <a href="https://wa.me/917841805093" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/918999428110" target="_blank" rel="noreferrer">
             <img src={whatsappIcon} alt="WhatsApp" />
           </a>
           <a href="https://instagram.com/helloparyatak" target="_blank" rel="noreferrer">

@@ -1,6 +1,6 @@
 export const bangaloreMysoreOotyPackage = {
   id: "bangalore-mysore-ooty-6d5n",
-  title: "Bangalore – Mysore – Ooty 5 Nights / 6 Days",
+  title: "Bangalore – Mysore – Ooty",
   country: "India",
   days: 6,
   nights: 5,

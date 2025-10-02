@@ -1,6 +1,6 @@
 export const baliGroupPackage = {
   id: "bali-7d6n",
-  title: "Bali Group Tour 6 Nights / 7 Days",
+  title: "Bali Group Tour",
   country: "Indonesia",
   days: 7,
   nights: 6,

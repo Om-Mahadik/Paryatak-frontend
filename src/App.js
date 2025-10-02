@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Home from "./pages/Home";
 import UserLayout from "./components/user/layout/UserLayout";
 import ContactUs from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import UserPackages from "./pages/Packages"; // Renamed for user
 import DubaiPackage from "./pages/Packages/DubaiPackage";
 import BaliPackage from "./pages/Packages/BaliPackage";
@@ -73,6 +74,16 @@ function App() {
             </UserLayout>
           }
         />
+
+        <Route
+          path="/gallery"
+          element={
+            <UserLayout>
+              <Gallery />
+            </UserLayout>
+          }
+        />
+
         <Route path="/blogs/:id" element={<UserLayout><BlogPage /></UserLayout>} />
 
         <Route path="/packages/dubai" element={<UserLayout><DubaiPackage /></UserLayout>} />

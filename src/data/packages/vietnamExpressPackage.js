@@ -1,6 +1,6 @@
 export const vietnamExpressPackage = {
   id: "vietnam-express-9d8n",
-  title: "Vietnam Express 8 Nights / 9 Days",
+  title: "Vietnam Express",
   country: "Vietnam",
   days: 9,
   nights: 8,

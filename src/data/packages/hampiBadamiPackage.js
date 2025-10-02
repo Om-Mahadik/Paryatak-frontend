@@ -1,6 +1,6 @@
 export const hampiBadamiPackage = {
   id: "hampi-badami-4d3n",
-  title: "Hampi – Badami 3 Nights / 4 Days",
+  title: "Hampi – Badami",
   country: "India",
   days: 4,
   nights: 3,

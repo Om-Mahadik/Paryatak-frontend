@@ -1,6 +1,6 @@
 export const sriLankaGroupPackage = {
   id: "sri-lanka-7d6n",
-  title: "Sri Lanka Group Tour 6 Nights / 7 Days",
+  title: "Sri Lanka Group Tour",
   country: "Sri Lanka",
   days: 7,
   nights: 6,

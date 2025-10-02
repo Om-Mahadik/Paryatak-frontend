@@ -1,6 +1,6 @@
 export const dubaiPackage = {
   id: "dubai-6d5n",
-  title: "Dubai 5 Nights / 6 Days",
+  title: "Dubai Tour",
   country: "Unitedddddd Arab Emirates",
   days: 6,
   nights: 5,

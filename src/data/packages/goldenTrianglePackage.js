@@ -1,6 +1,6 @@
 export const goldenTrianglePackage = {
   id: "golden-triangle-6n7d",
-  title: "Golden Triangle India Tour 6 Nights / 7 Days",
+  title: "Golden Triangle India Tour",
   country: "India",
   days: 7,
   nights: 6,

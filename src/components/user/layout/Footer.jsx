@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logo from "../../../imgs/logo.png";
 import emailIcon from "../../../imgs/icons/email-white.svg";
 import phoneIcon from "../../../imgs/icons/phone-white.svg";

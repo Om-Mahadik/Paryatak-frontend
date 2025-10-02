@@ -152,7 +152,7 @@ function App() {
           <Route path="packages/new" element={<PackageSetup />} />
 
           {/* Admin Blogs Routes */}
-          <Route path="blogs" element={<adminBlogs />} />
+          <Route path="blogs" element={<AdminBlogs />} />
           <Route path="blogs/new" element={<BlogSetup />} />
           <Route path="blogs/:id" element={<BlogSetup />} /> 
 

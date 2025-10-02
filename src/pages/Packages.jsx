@@ -2,7 +2,7 @@ import React from "react";
 import InternationalPackagesSection from "../components/user/PackageSections/InternationalPackagesSection";
 import NationalPackagesSection from "../components/user/PackageSections/NationalPackagesSection";
 //import CustomPackagesSection from "../components/user/PackageSections/CustomPackagesSection";
-import { internationalPackages, nationalPackages, customPackages } from "../data/packages/packages";
+import { internationalPackages, nationalPackages } from "../data/packages/packages";
 import "./Packages.css";
 
 const Packages = () => {

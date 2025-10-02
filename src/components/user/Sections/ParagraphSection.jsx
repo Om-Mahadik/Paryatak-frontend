@@ -13,7 +13,7 @@ const ParagraphSection = () => {
 
   // Shortened paragraph
   const paragraphText =
-    "Travel is not just about reaching places, it’s about living stories. At GoParyatak, we make every journey effortless and memorable — so you can focus on exploring and discovering the world.";
+    "Travel is not just about reaching places, it’s about living stories. At HelloParyatak, we make every journey effortless and memorable — so you can focus on exploring and discovering the world.";
 
   // Words to highlight
   const highlightWords = ["Travel", "stories", "effortless", "memorable", "exploring", "discovering"];

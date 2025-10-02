@@ -94,7 +94,7 @@ const PackageHeadDetails = ({ data }) => {
           href={waLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn whatsapp-btn"
+          className="btn wp-btn"
         >
           <img src={whatsappIcon} alt="whatsapp" className="btn-icon" />
           Chat on WhatsApp

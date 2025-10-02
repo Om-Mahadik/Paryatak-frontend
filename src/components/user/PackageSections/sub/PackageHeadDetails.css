@@ -121,19 +121,19 @@
 }
 
 /* WhatsApp button (black-ish background) */
-.whatsapp-btn {
+.wp-btn {
   background: #111;
   border: none;
   color: #fff;
 }
 
-.whatsapp-btn:hover {
+.wp-btn:hover {
   background: #333;
 }
 
 /* WhatsApp mobile adjustments */
-.whatsapp-btn .btn-icon,
-.whatsapp-btn {
+.wp-btn .btn-icon,
+.wp-btn {
   vertical-align: middle;
   font-weight: 500;
 }

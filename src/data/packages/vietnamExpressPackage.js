@@ -6,7 +6,7 @@ export const vietnamExpressPackage = {
   nights: 8,
   price: "₹1,32,900 per adult + 5% GST + 5% TCS",
   thumbnail:
-    "https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg", // Vietnam scenic image
+    "https://images.pexels.com/photos/4652275/pexels-photo-4652275.jpeg", // Vietnam scenic image
   description:
     "Experience the best of Vietnam in 9 days – from Hanoi’s old-world charm to Halong Bay’s limestone wonders, from the ancient town of Hoi An and the iconic Golden Bridge at Ba Na Hills to the bustling streets of Ho Chi Minh City and the serene Mekong Delta. This journey combines history, culture, and breathtaking landscapes.",
 
@@ -36,76 +36,81 @@ export const vietnamExpressPackage = {
       title: "Arrival in Hanoi – PM City Tour",
       description:
         "Arrive at Noi Bai Airport, transfer to hotel. Afternoon visit Temple of Literature, Ngoc Son Temple, Hoan Kiem Lake, and enjoy a cyclo ride through Old Quarter. Lunch & dinner at Indian restaurant. Overnight in Hanoi.",
-      photo: "https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg",
+      photo: "https://images.pexels.com/photos/19592021/pexels-photo-19592021.jpeg",
     },
     {
       day: 2,
       title: "Hanoi – Ninh Binh – Hoa Lu & Trang An",
       description:
         "Travel to Hoa Lu to explore Vietnam’s ancient capital. Visit Dinh and Le Temples. Afternoon sampan boat ride through Trang An ecological site with caves and valleys. Overnight in Hanoi.",
-      photo: "https://images.pexels.com/photos/2161440/pexels-photo-2161440.jpeg",
+      photo: "https://images.pexels.com/photos/32700715/pexels-photo-32700715.jpeg",
     },
     {
       day: 3,
       title: "Hanoi – Halong Bay (Overnight Cruise)",
       description:
         "Drive to Halong Bay, board the cruise, visit fishing villages, enjoy seafood dinner under the stars. Overnight on cruise.",
-      photo: "https://images.pexels.com/photos/2161439/pexels-photo-2161439.jpeg",
+      photo: "https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg",
     },
     {
       day: 4,
       title: "Halong Bay – Hanoi – Flight to Danang",
       description:
         "Morning cave visit & brunch on cruise. Return to Hanoi for late afternoon flight to Danang. Dinner at Indian restaurant. Overnight in Danang.",
-      photo: "https://images.pexels.com/photos/1595243/pexels-photo-1595243.jpeg",
+      photo: "https://images.pexels.com/photos/19328627/pexels-photo-19328627.jpeg",
     },
     {
       day: 5,
       title: "Danang – Marble Mountain, Hoi An & Lantern Boat",
       description:
         "Visit Marble Mountain & Linh Ung Pagoda. Afternoon basket boat tour in Cam Thanh village. Explore Hoi An Ancient Town and lantern boat trip. Overnight in Danang.",
-      photo: "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg",
+      photo: "https://images.pexels.com/photos/5746254/pexels-photo-5746254.jpeg",
     },
     {
       day: 6,
       title: "Danang – Golden Bridge & Ba Na Hills",
       description:
         "Cable car ride to Ba Na Hills. Visit Golden Bridge, French Village, gardens, pagodas, Fantasy Park, and more. Overnight in Danang.",
-      photo: "https://images.pexels.com/photos/3048510/pexels-photo-3048510.jpeg",
+      photo: "https://images.pexels.com/photos/2582794/pexels-photo-2582794.jpeg",
     },
     {
       day: 7,
       title: "Flight to Ho Chi Minh City – Cu Chi Tunnels",
       description:
         "Morning flight to Ho Chi Minh City. Afternoon visit Cu Chi Tunnels – the underground network from Vietnam War. Overnight in Ho Chi Minh City.",
-      photo: "https://images.pexels.com/photos/1405070/pexels-photo-1405070.jpeg",
+      photo: "https://images.pexels.com/photos/32331813/pexels-photo-32331813.jpeg",
     },
     {
       day: 8,
       title: "Mekong Delta (My Tho)",
       description:
         "Boat ride through islands, sampan rowboat ride, coconut candy workshop, tropical fruits, honey tea, traditional music. Visit Vinh Trang Pagoda. Return to Ho Chi Minh City. Overnight stay.",
-      photo: "https://images.pexels.com/photos/356041/pexels-photo-356041.jpeg",
+      photo: "https://images.pexels.com/photos/1660996/pexels-photo-1660996.jpeg",
     },
     {
       day: 9,
       title: "Ho Chi Minh City Tour & Departure",
       description:
         "Guided city tour: Reunification Palace, Notre Dame Cathedral, Old Post Office, Ben Thanh Market. Transfer to airport for onward flight.",
-      photo: "https://images.pexels.com/photos/3645649/pexels-photo-3645649.jpeg",
+      photo: "https://images.pexels.com/photos/1018478/pexels-photo-1018478.jpeg",
     },
   ],
 
   gallery: [
-    "https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg",
-    "https://images.pexels.com/photos/2161440/pexels-photo-2161440.jpeg",
-    "https://images.pexels.com/photos/2161439/pexels-photo-2161439.jpeg",
-    "https://images.pexels.com/photos/1595243/pexels-photo-1595243.jpeg",
-    "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg",
-    "https://images.pexels.com/photos/3048510/pexels-photo-3048510.jpeg",
-    "https://images.pexels.com/photos/1405070/pexels-photo-1405070.jpeg",
-    "https://images.pexels.com/photos/356041/pexels-photo-356041.jpeg",
-    "https://images.pexels.com/photos/3645649/pexels-photo-3645649.jpeg",
+    "hhttps://images.pexels.com/photos/19592021/pexels-photo-19592021.jpeg",
+    "https://images.pexels.com/photos/32700715/pexels-photo-32700715.jpeg",
+    "https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg",
+    "https://images.pexels.com/photos/19328627/pexels-photo-19328627.jpeg",
+    "https://images.pexels.com/photos/5746254/pexels-photo-5746254.jpeg",
+    "https://images.pexels.com/photos/2582794/pexels-photo-2582794.jpeg",
+    "https://images.pexels.com/photos/32331813/pexels-photo-32331813.jpeg",
+    "https://images.pexels.com/photos/1660996/pexels-photo-1660996.jpeg",
+    "hhttps://images.pexels.com/photos/1018478/pexels-photo-1018478.jpeg",
+    "https://images.pexels.com/photos/2796627/pexels-photo-2796627.jpeg",
+    "https://images.pexels.com/photos/2965773/pexels-photo-2965773.jpeg",
+    "https://images.pexels.com/photos/1368562/pexels-photo-1368562.jpeg",
+    "https://images.pexels.com/photos/2993128/pexels-photo-2993128.jpeg",
+    "https://images.pexels.com/photos/4652275/pexels-photo-4652275.jpeg"
   ],
 
   groupDates: [

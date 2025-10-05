@@ -1,7 +1,7 @@
 export const dubaiPackage = {
   id: "dubai-6d5n",
   title: "Dubai Tour",
-  country: "Unitedddddd Arab Emirates",
+  country: "United Arab Emirates",
   days: 6,
   nights: 5,
   price: "₹85,000 per person",

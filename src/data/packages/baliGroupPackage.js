@@ -11,7 +11,7 @@ export const baliGroupPackage = {
   },
 
   thumbnail:
-    "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+    "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg",
 
   description:
     "Explore the tropical paradise of Bali with pristine beaches, lush rice terraces, ancient temples, vibrant culture, and thrilling adventures. This 7-day guided tour ensures a perfect blend of sightseeing, relaxation, and cultural immersion.",
@@ -56,58 +56,64 @@ export const baliGroupPackage = {
       title: "Arrival – Kuta / Seminyak",
       description:
         "Arrive in Bali. Meet your representative and transfer to hotel in Kuta/Seminyak. Relax at the beach or hotel. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+      photo: "https://images.pexels.com/photos/14551162/pexels-photo-14551162.jpeg",
     },
     {
       day: 2,
       title: "Tanah Lot Temple & Beach Leisure",
       description:
         "After breakfast, visit Tanah Lot Temple, one of Bali's iconic sea temples. Enjoy sunset views. Evening free for beach leisure. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
+      photo: "https://images.pexels.com/photos/17299295/pexels-photo-17299295.jpeg",
     },
     {
       day: 3,
       title: "Ubud – Monkey Forest & Rice Terraces",
       description:
         "Full day excursion to Ubud. Visit Ubud Monkey Forest, Tegalalang Rice Terraces, and traditional markets. Experience Balinese culture. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/1380799/pexels-photo-1380799.jpeg",
+      photo: "https://images.pexels.com/photos/2412711/pexels-photo-2412711.jpeg",
     },
     {
       day: 4,
       title: "Mount Batur Sunrise Trek",
       description:
         "Early morning Mount Batur sunrise trek. Witness spectacular sunrise views over the volcanic landscape. Return to hotel and relax. Optional spa treatments in the evening. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/460621/pexels-photo-460621.jpeg",
+      photo: "https://images.pexels.com/photos/6367325/pexels-photo-6367325.jpeg",
     },
     {
       day: 5,
       title: "Waterbom Bali & Beach Leisure",
       description:
         "Enjoy a fun-filled day at Waterbom Bali, a world-famous water park. Afternoon free for beach activities or shopping. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/261168/pexels-photo-261168.jpeg",
+      photo: "https://tse3.mm.bing.net/th/id/OIP.DusEJ2tWfMMtoEo6aFPUDwHaE6?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     },
     {
       day: 6,
       title: "Cultural Performance & Local Sightseeing",
       description:
         "Visit Uluwatu Temple and enjoy a Kecak Dance performance at sunset. Explore Jimbaran Bay for seafood dinner. Overnight stay at Bali.",
-      photo: "https://images.pexels.com/photos/208745/pexels-photo-208745.jpeg",
+      photo: "https://images.pexels.com/photos/32162991/pexels-photo-32162991.jpeg",
     },
     {
       day: 7,
       title: "Departure from Bali",
       description:
         "After breakfast, check out from hotel and transfer to Bali airport for your onward flight. Tour ends with happy memories.",
-      photo: "https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg",
+      photo: "https://images.pexels.com/photos/2166643/pexels-photo-2166643.jpeg",
     },
   ],
 
   gallery: [
-    "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
-    "https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg",
-    "https://images.pexels.com/photos/1380799/pexels-photo-1380799.jpeg",
-    "https://images.pexels.com/photos/460621/pexels-photo-460621.jpeg",
-    "https://images.pexels.com/photos/261168/pexels-photo-261168.jpeg",
+    "https://images.pexels.com/photos/14551162/pexels-photo-14551162.jpeg",
+    "https://images.pexels.com/photos/17299295/pexels-photo-17299295.jpeg",
+    "https://images.pexels.com/photos/2412711/pexels-photo-2412711.jpeg",
+    "https://images.pexels.com/photos/6367325/pexels-photo-6367325.jpeg",
+    "https://tse3.mm.bing.net/th/id/OIP.DusEJ2tWfMMtoEo6aFPUDwHaE6?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://images.pexels.com/photos/32162991/pexels-photo-32162991.jpeg",
+    "https://images.pexels.com/photos/2166643/pexels-photo-2166643.jpeg",
+    "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg",
+    "https://images.pexels.com/photos/931007/pexels-photo-931007.jpeg",
+    "https://images.pexels.com/photos/2166608/pexels-photo-2166608.jpeg",
+    "https://images.pexels.com/photos/2186581/pexels-photo-2186581.jpeg"
   ],
 
   groupDates: [

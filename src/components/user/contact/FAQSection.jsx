@@ -24,6 +24,46 @@ const FAQSection = () => {
       question: "Do you provide travel insurance?",
       answer:
         "Yes, travel insurance is available on request and can be included in your package."
+    },
+    {
+      question: "What is your cancellation policy?",
+      answer:
+        "Our cancellation policy depends on the package and time of cancellation. Full details will be shared at booking."
+    },
+    {
+      question: "Are flights included in the packages?",
+      answer:
+        "Flights are not always included by default. However, we can book them for you as part of a customized package."
+    },
+    {
+      question: "Do you provide visa assistance?",
+      answer:
+        "Yes, we guide you through the visa process and provide all necessary documentation support."
+    },
+    {
+      question: "Are your packages suitable for families with kids?",
+      answer:
+        "Absolutely! We offer family-friendly itineraries with activities for both kids and adults."
+    },
+    {
+      question: "What safety measures do you follow?",
+      answer:
+        "Your safety is our top priority. We work only with trusted partners, verified hotels, and experienced guides."
+    },
+    {
+      question: "Can I travel solo with your packages?",
+      answer:
+        "Yes, solo travelers are welcome! We offer special packages and support for solo adventurers."
+    },
+    {
+      question: "Do you arrange group tours?",
+      answer:
+        "Yes, we organize both fixed-date group tours and private group packages for families, friends, and corporate teams."
+    },
+    {
+      question: "How early should I book my trip?",
+      answer:
+        "We recommend booking at least 2–3 months in advance to get the best deals and secure availability."
     }
   ];
 

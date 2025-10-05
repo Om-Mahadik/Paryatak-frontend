@@ -11,7 +11,7 @@ export const sriLankaGroupPackage = {
   },
 
   thumbnail:
-    "https://images.pexels.com/photos/1738611/pexels-photo-1738611.jpeg",
+    "https://images.pexels.com/photos/33592689/pexels-photo-33592689.jpeg",
 
   description:
     "Experience the cultural heritage, scenic landscapes, and serene beaches of Sri Lanka in this 7-day guided group tour. From ancient temples and spice gardens to tea plantations and coastal beauty, this journey covers the best of Sri Lanka.",
@@ -56,58 +56,67 @@ export const sriLankaGroupPackage = {
       title: "Airport – Pinnawala – Dambulla",
       description:
         "Arrive in Sri Lanka. Meet representative and proceed via Pinnawala to Dambulla. Visit Pinnawala Elephant Orphanage and Dambulla Cave Temple. Overnight in Dambulla.",
-      photo: "https://images.pexels.com/photos/302555/pexels-photo-302555.jpeg",
+      photo: "https://images.pexels.com/photos/18199789/pexels-photo-18199789.jpeg",
     },
     {
       day: 2,
       title: "Dambulla – Matale – Kandy",
       description:
         "After breakfast, depart for Kandy via Matale. Visit a spice garden & Batik factory. Evening city tour of Kandy covering city, lake, bazaars, gem museum, Temple of Sacred Tooth Relic & cultural dance show. Overnight in Kandy.",
-      photo: "https://images.pexels.com/photos/1738611/pexels-photo-1738611.jpeg",
+      photo: "https://images.pexels.com/photos/33404364/pexels-photo-33404364.jpeg",
     },
     {
       day: 3,
       title: "Kandy – Nuwara Eliya",
       description:
         "After breakfast, drive to Nuwara Eliya. En-route visit a Tea Plantation & factory and Ramboda Falls. Check in & relax. Overnight stay in Nuwara Eliya.",
-      photo: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
+      photo: "https://images.pexels.com/photos/13765678/pexels-photo-13765678.jpeg",
     },
     {
       day: 4,
       title: "Nuwara Eliya Sightseeing",
       description:
         "City tour of Nuwara Eliya. Visit Gregory Lake Park, Sita Amman Temple, and Ashok Vatika (Hakgala Botanical Garden). Overnight stay in Nuwara Eliya.",
-      photo: "https://images.pexels.com/photos/45203/pexels-photo-45203.jpeg",
+      photo: "https://images.pexels.com/photos/32414014/pexels-photo-32414014.jpeg",
     },
     {
       day: 5,
       title: "Nuwara Eliya – Bentota",
       description:
         "After breakfast, proceed to Bentota. Enjoy the scenic drive and check-in at hotel. Relax and overnight stay in Bentota.",
-      photo: "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg",
+      photo: "https://images.pexels.com/photos/15589614/pexels-photo-15589614.jpeg",
     },
     {
       day: 6,
       title: "Bentota – Galle – Bentota",
       description:
         "Breakfast at hotel and proceed to Galle for sightseeing. Visit Galle Fort & Dutch architecture. Return to Bentota and visit Turtle Hatchery. Enjoy Madu River boat safari. Overnight in Bentota. (Meals: Breakfast, Lunch & Dinner)",
-      photo: "https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg",
+      photo: "https://images.pexels.com/photos/27669315/pexels-photo-27669315.jpeg",
     },
     {
       day: 7,
       title: "Bentota – Colombo – Airport",
       description:
         "After breakfast, check out and proceed for Colombo city tour. Evening transfer to airport for flight to Mumbai. Tour ends with happy memories.",
-      photo: "https://images.pexels.com/photos/3022671/pexels-photo-3022671.jpeg",
+      photo: "https://images.pexels.com/photos/1450349/pexels-photo-1450349.jpeg",
     },
   ],
 
   gallery: [
-    "https://images.pexels.com/photos/1738611/pexels-photo-1738611.jpeg",
-    "https://images.pexels.com/photos/302555/pexels-photo-302555.jpeg",
-    "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
-    "https://images.pexels.com/photos/45203/pexels-photo-45203.jpeg",
-    "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg",
+    // existing 5
+    "https://images.pexels.com/photos/2403209/pexels-photo-2403209.jpeg",
+    "https://images.pexels.com/photos/3073033/pexels-photo-3073033.jpeg",
+    "https://images.pexels.com/photos/1005417/pexels-photo-1005417.jpeg",
+    "https://images.pexels.com/photos/34128250/pexels-photo-34128250.jpeg",
+    "https://images.pexels.com/photos/12343661/pexels-photo-12343661.jpeg",
+    // itinerary photos
+    "https://images.pexels.com/photos/18199789/pexels-photo-18199789.jpeg",
+    "https://images.pexels.com/photos/33404364/pexels-photo-33404364.jpeg",
+    "https://images.pexels.com/photos/13765678/pexels-photo-13765678.jpeg",
+    "https://images.pexels.com/photos/32414014/pexels-photo-32414014.jpeg",
+    "https://images.pexels.com/photos/15589614/pexels-photo-15589614.jpeg",
+    "https://images.pexels.com/photos/27669315/pexels-photo-27669315.jpeg",
+    "https://images.pexels.com/photos/1450349/pexels-photo-1450349.jpeg",
   ],
 
   groupDates: [

@@ -24,7 +24,7 @@ const HeroSection = () => {
           Your <strong>Inner Peace</strong>
         </h1>
         <p className="hero-subheadline">
-          Feeling Relax? Connect with us to find & plan your journey to Explore the World!
+          Feeling relaxed? Connect with us to plan your journey and explore the world!
         </p>
 
         <button className="hero-btn" onClick={handleScroll}>

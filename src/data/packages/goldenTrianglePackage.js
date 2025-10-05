@@ -11,7 +11,7 @@ export const goldenTrianglePackage = {
   },
 
   thumbnail:
-    "https://images.pexels.com/photos/302447/pexels-photo-302447.jpeg",
+    "https://images.pexels.com/photos/602607/pexels-photo-602607.png",
 
   description:
     "Discover the rich history, culture, and architecture of India on this Golden Triangle tour covering Delhi, Agra, and Jaipur. Explore ancient forts, majestic palaces, bustling bazaars, and the iconic Taj Mahal in a 7-day guided journey.",
@@ -52,28 +52,28 @@ export const goldenTrianglePackage = {
       title: "Arrival – Delhi",
       description:
         "Arrive in Delhi and transfer to hotel. Relax after your journey. Evening guided heritage walk in Connaught Place. Overnight in Delhi.",
-      photo: "https://images.pexels.com/photos/302447/pexels-photo-302447.jpeg",
+      photo: "https://images.pexels.com/photos/34149324/pexels-photo-34149324.jpeg",
     },
     {
       day: 2,
       title: "Delhi City Tour",
       description:
         "After breakfast, full-day sightseeing covering Qutub Minar, India Gate, Humayun's Tomb, Lotus Temple, and Red Fort. Explore local markets in the evening. Overnight in Delhi.",
-      photo: "https://images.pexels.com/photos/461109/pexels-photo-461109.jpeg",
+      photo: "https://images.pexels.com/photos/18567617/pexels-photo-18567617.jpeg",
     },
     {
       day: 3,
       title: "Delhi – Agra",
       description:
         "Drive to Agra. Visit Agra Fort and Mehtab Bagh. Evening visit to the Taj Mahal for sunset photography. Overnight stay in Agra.",
-      photo: "https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg",
+      photo: "https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg",
     },
     {
       day: 4,
       title: "Agra – Jaipur via Fatehpur Sikri",
       description:
         "After breakfast, drive to Jaipur en route visiting the UNESCO site Fatehpur Sikri. Check-in at Jaipur hotel and relax. Overnight in Jaipur.",
-      photo: "https://images.pexels.com/photos/260346/pexels-photo-260346.jpeg",
+      photo: "https://images.pexels.com/photos/4476380/pexels-photo-4476380.jpeg",
     },
     {
       day: 5,
@@ -87,23 +87,34 @@ export const goldenTrianglePackage = {
       title: "Jaipur – Delhi",
       description:
         "After breakfast, drive back to Delhi. Afternoon free for leisure or shopping. Overnight stay in Delhi.",
-      photo: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg",
+      photo: "https://images.pexels.com/photos/6440428/pexels-photo-6440428.jpeg",
     },
     {
       day: 7,
       title: "Departure from Delhi",
       description:
         "After breakfast, check out and transfer to Delhi airport/railway station for onward journey. Tour ends with happy memories.",
-      photo: "https://images.pexels.com/photos/221454/pexels-photo-221454.jpeg",
+      photo: "https://images.pexels.com/photos/4059538/pexels-photo-4059538.jpeg",
     },
   ],
 
   gallery: [
-    "https://images.pexels.com/photos/302447/pexels-photo-302447.jpeg",
-    "https://images.pexels.com/photos/461109/pexels-photo-461109.jpeg",
-    "https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg",
-    "https://images.pexels.com/photos/260346/pexels-photo-260346.jpeg",
-    "https://images.pexels.com/photos/209374/pexels-photo-209374.jpeg",
+    // Day-wise images
+    "https://images.pexels.com/photos/34149324/pexels-photo-34149324.jpeg", // Day 1 Delhi
+    "https://images.pexels.com/photos/18567617/pexels-photo-18567617.jpeg", // Day 2 Delhi
+    "https://images.pexels.com/photos/3881104/pexels-photo-3881104.jpeg", // Day 3 Agra
+    "https://images.pexels.com/photos/4476380/pexels-photo-4476380.jpeg", // Day 4 Fatehpur Sikri
+    "https://images.pexels.com/photos/209374/pexels-photo-209374.jpeg",   // Day 5 Jaipur
+    "https://images.pexels.com/photos/6440428/pexels-photo-6440428.jpeg", // Day 6 Jaipur-Delhi
+    "https://images.pexels.com/photos/4059538/pexels-photo-4059538.jpeg", // Day 7 Departure
+
+    // Existing extra gallery shots
+    "https://images.pexels.com/photos/34088513/pexels-photo-34088513.jpeg",
+    "https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg",
+    "https://images.pexels.com/photos/19149579/pexels-photo-19149579.jpeg",
+    "https://images.pexels.com/photos/16745021/pexels-photo-16745021.jpeg",
+    "https://images.pexels.com/photos/1007426/pexels-photo-1007426.jpeg",
+    "https://images.pexels.com/photos/14388684/pexels-photo-14388684.jpeg"
   ],
 
   groupDates: [

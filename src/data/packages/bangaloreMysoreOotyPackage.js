@@ -48,7 +48,7 @@ export const bangaloreMysoreOotyPackage = {
   ],
 
   thumbnail:
-    "https://images.pexels.com/photos/3022671/pexels-photo-3022671.jpeg",
+    "https://images.pexels.com/photos/32366710/pexels-photo-32366710.jpeg",
 
   description:
     "Explore the scenic beauty of Ooty, the royal heritage of Mysore, and the bustling city of Bangalore with this 6-day tour. Experience lush tea gardens, historic palaces, wildlife sanctuaries, and cultural landmarks in one comprehensive package.",
@@ -86,51 +86,60 @@ export const bangaloreMysoreOotyPackage = {
       title: "Bangalore – Ooty (En-route Sightseeing)",
       description:
         "Pickup from Bangalore Airport and drive to Ooty (approx. 350 km). En-route sightseeing includes Bandipur National Forest, Mudumalai Forest, Pykara Falls, Pykara Lake (boating), Shooting Point, and Pine Forest. Check-in at hotel. Overnight in Ooty.",
-      photo: "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
+      photo: "https://images.pexels.com/photos/982021/pexels-photo-982021.jpeg",
     },
     {
       day: 2,
       title: "Ooty Full Day Sightseeing",
       description:
         "After breakfast, enjoy sightseeing in Ooty: Shooting Spot, Pykara Lake & Falls, Rose Garden, Ooty Lake, Botanical Garden, Chocolate Factory, and Tea Factory. Overnight stay in Ooty.",
-      photo: "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
+      photo: "https://images.pexels.com/photos/32366710/pexels-photo-32366710.jpeg",
     },
     {
       day: 3,
       title: "Day Trip to Coonoor",
       description:
         "Breakfast at hotel and proceed to Coonoor. Visit Sim’s Park, Lamb’s Rock, Dolphin’s Nose, Ketti Valley viewpoint, Tea Factory & Museum, and Doddabetta Peak (highest in Nilgiris). Return to Ooty. Overnight in Ooty.",
-      photo: "https://images.pexels.com/photos/163279/hindu-temple-india-hampi-karnataka-163279.jpeg",
+      photo: "https://images.pexels.com/photos/25946627/pexels-photo-25946627.jpeg",
     },
     {
       day: 4,
       title: "Ooty – Mysore Sightseeing",
       description:
         "After breakfast, check out and drive to Mysore. Sightseeing includes Mysore Palace, Chamundi Hill, and Mysore Zoo (time permitting). Overnight stay in Mysore.",
-      photo: "https://images.pexels.com/photos/1670186/pexels-photo-1670186.jpeg",
+      photo: "https://images.pexels.com/photos/9882016/pexels-photo-9882016.jpeg",
     },
     {
       day: 5,
       title: "Mysore Full Day Sightseeing",
       description:
         "Breakfast at hotel. Visit Chamundi Hill, Mysore Zoo, Mysore Palace, St. Philomena’s Church, Jagan Mohan Palace (Art Gallery), and Brindavan Gardens with musical fountain show in evening. Overnight in Mysore.",
-      photo: "https://images.pexels.com/photos/356968/pexels-photo-356968.jpeg",
+      photo: "https://www.hlimg.com/images/things2do/738X538/brindavan-gardens-mysore-makemytrip-1513705991t.jpg",
     },
     {
       day: 6,
       title: "Mysore – Bangalore Departure",
       description:
         "Breakfast at hotel. Drive to Bangalore (approx. 260 km). Drop at airport / railway station. Tour ends with happy memories.",
-      photo: "https://images.pexels.com/photos/3022671/pexels-photo-3022671.jpeg",
+      photo: "https://images.pexels.com/photos/739987/pexels-photo-739987.jpeg",
     },
   ],
 
   gallery: [
-    "https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg",
-    "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
-    "https://images.pexels.com/photos/1670186/pexels-photo-1670186.jpeg",
-    "https://images.pexels.com/photos/356968/pexels-photo-356968.jpeg",
-    "https://images.pexels.com/photos/3022671/pexels-photo-3022671.jpeg",
+    // Day-wise itinerary photos first
+    "https://images.pexels.com/photos/982021/pexels-photo-982021.jpeg", // Day 1 – Bandipur forest road
+    "https://images.pexels.com/photos/32366710/pexels-photo-32366710.jpeg", // Day 2 – Ooty Rose Garden
+    "https://images.pexels.com/photos/25946627/pexels-photo-25946627.jpeg", // Day 3 – Coonoor Dolphin’s Nose
+    "https://images.pexels.com/photos/9882016/pexels-photo-9882016.jpeg", // Day 4 – Mysore Palace
+    "https://www.hlimg.com/images/things2do/738X538/brindavan-gardens-mysore-makemytrip-1513705991t.jpg", // Day 5 – Brindavan Gardens
+    "https://images.pexels.com/photos/739987/pexels-photo-739987.jpeg", // Day 6 – Vidhana Soudha Bangalore
+
+    // Extra highlight shots
+    "https://images.pexels.com/photos/8465212/pexels-photo-8465212.jpeg",
+    "https://images.pexels.com/photos/16715671/pexels-photo-16715671.jpeg",
+    "https://images.pexels.com/photos/28939074/pexels-photo-28939074.jpeg",
+    "https://images.pexels.com/photos/27796542/pexels-photo-27796542.jpeg",
+    "https://images.pexels.com/photos/19522934/pexels-photo-19522934.jpeg",
   ],
 
   groupDates: [

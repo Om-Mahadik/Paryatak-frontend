@@ -6,7 +6,7 @@ export const vietnamExpressPackage = {
   nights: 8,
   price: "₹1,32,900 per adult + 5% GST + 5% TCS",
   thumbnail:
-    "https://images.pexels.com/photos/4652275/pexels-photo-4652275.jpeg", // Vietnam scenic image
+    "https://images.pexels.com/photos/2161449/pexels-photo-2161449.jpeg", // Vietnam scenic image
   description:
     "Experience the best of Vietnam in 9 days – from Hanoi’s old-world charm to Halong Bay’s limestone wonders, from the ancient town of Hoi An and the iconic Golden Bridge at Ba Na Hills to the bustling streets of Ho Chi Minh City and the serene Mekong Delta. This journey combines history, culture, and breathtaking landscapes.",
 

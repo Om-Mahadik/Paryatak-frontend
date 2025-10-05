@@ -27,7 +27,7 @@ const PackagesSection = () => {
       country: "Indonesia",
       description:
         "Relax on pristine beaches, explore temples, and enjoy tropical vibes.",
-      thumbnail: "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg",
+      thumbnail: "https://images.pexels.com/photos/2166559/pexels-photo-2166559.jpeg",
       rating: 5,
       link: "/packages/bali",
     },
@@ -38,7 +38,7 @@ const PackagesSection = () => {
       description:
         "Experience cultural richness, beautiful landscapes, and delicious cuisine.",
       thumbnail:
-        "https://images.pexels.com/photos/104827/cam-nang-vietnam-104827.jpeg",
+        "https://images.pexels.com/photos/4652275/pexels-photo-4652275.jpeg",
       rating: 4,
       link: "/packages/vietnam",
     },
@@ -61,7 +61,7 @@ const PackagesSection = () => {
       description:
         "Explore Delhi, Agra, Jaipur with rich cultural heritage and history.",
       thumbnail:
-        "https://images.pexels.com/photos/3997987/pexels-photo-3997987.jpeg",
+        "https://images.pexels.com/photos/602607/pexels-photo-602607.png",
       rating: 5,
       link: "/packages/golden-triangle",
     },

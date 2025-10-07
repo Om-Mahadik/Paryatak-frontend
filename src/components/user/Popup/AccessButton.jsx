@@ -5,12 +5,11 @@ import phoneIcon from "../../../imgs/icons/phone.svg"; // Phone icon
 
 const AccessButton = ({ link }) => {
   // WhatsApp
-  const phoneNumber = "8999428110"; // Replace with your number
+  const phoneNumber = "918999428110"; // Replace with your number
   const defaultMessage = encodeURIComponent(
     "Hello! Can I get more details about your tour packages?"
   );
-  const whatsappLink =
-    link || `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${defaultMessage}`;
 
   // Call Now handler
   const handleCall = () => {

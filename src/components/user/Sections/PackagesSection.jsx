@@ -72,7 +72,7 @@ const PackagesSection = () => {
       description:
         "Discover ancient ruins, stunning landscapes, and vibrant culture in Hampi.",
       thumbnail:
-        "https://images.pexels.com/photos/106359/pexels-photo-106359.jpeg",
+        "https://images.pexels.com/photos/14496568/pexels-photo-14496568.jpeg",
       rating: 5,
       link: "/packages/hampi",
     },
@@ -83,7 +83,7 @@ const PackagesSection = () => {
       description:
         "Enjoy modern city vibes in Bangalore and royal heritage in Mysore.",
       thumbnail:
-        "https://images.pexels.com/photos/1619657/pexels-photo-1619657.jpeg",
+        "https://images.pexels.com/photos/32366710/pexels-photo-32366710.jpeg",
       rating: 4,
       link: "/packages/bangalore-mysore",
     },

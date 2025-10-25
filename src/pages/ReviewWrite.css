@@ -1,0 +1,276 @@
+.review-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f9fc;
+  font-family: "Inter", sans-serif;
+  padding: 20px;
+}
+
+.review-card {
+  background: #fff;
+  padding: 40px 30px 30px 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+.review-card.compact {
+  padding: 30px 25px 25px 25px;
+  border-radius: 25px;
+}
+
+.review-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.review-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.input-label {
+  font-weight: 500;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.review-form input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.review-form input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1e40af;
+  box-shadow: 0 0 4px rgba(30, 64, 175, 0.2);
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Stars */
+.star-container {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.star {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.filled path {
+  fill: url(#grad-1);
+}
+
+/* Custom Dropdown */
+.custom-dropdown {
+  position: relative;
+  user-select: none;
+}
+
+.dropdown-header {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin-bottom: 25px;
+}
+
+.arrow {
+  border: solid #111;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+.arrow.up {
+  transform: rotate(-135deg);
+}
+
+.dropdown-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f2f2f2;
+}
+
+/* Submit button */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #1e40af;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #3749d0;
+  transform: translateY(-1px);
+}
+
+/* Popup */
+.custom-popup {
+  position: fixed;
+  bottom: 1.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e40af;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: popupSlide 0.3s ease;
+}
+
+@keyframes popupSlide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+/* Remove blue tap highlight on mobile for clickable elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: remove focus outline on interactive elements */
+button, input, textarea, .dropdown-header, .star {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Success Card */
+.review-card.success-card {
+  padding: 40px 30px;
+  text-align: center;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+.success-icon {
+  display: block;       /* ensures it's a block element */
+  margin: 0 auto 20px;  /* horizontally center and add bottom spacing */
+  color: #22c55e;
+  animation: pop 0.5s ease forwards;
+  font-size: 48px;      /* adjust size as needed */
+}
+
+.review-card.success-card .review-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.review-card.success-card .review-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Button in Success Card */
+.review-card.success-card .submit-btn {
+  background: #333333;
+}
+
+.review-card.success-card .submit-btn:hover {
+  background: #16a34a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

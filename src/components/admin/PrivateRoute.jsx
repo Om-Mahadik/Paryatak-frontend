@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { auth } from "../../firebase/config";
+import { onAuthStateChanged } from "firebase/auth";
 
 const PrivateRoute = ({ children }) => {
-  const [loading, setLoading] = useState(true);
+  const [checkingAuth, setCheckingAuth] = useState(true);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+    console.log("PrivateRoute: setting up auth listener");
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("Firebase user:", currentUser);
       setUser(currentUser);
-      setLoading(false);
+      setCheckingAuth(false);
     });
 
     return () => unsubscribe();
   }, []);
 
-  if (loading) {
-    // You can render a spinner or blank page while checking auth
+  if (checkingAuth) {
     return <div>Loading...</div>;
   }
 
   if (!user) {
-    // Not logged in → redirect to login page
-    return <Navigate to="/admin" replace />;
+    console.log("Redirecting to /admin/login");
+    return <Navigate to="/admin/login" replace />;
   }
 
-  // Logged in → render child component
   return children;
 };
 

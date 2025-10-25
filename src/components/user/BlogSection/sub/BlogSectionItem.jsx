@@ -23,7 +23,7 @@ const BlogSectionItem = ({ blog }) => {
   return (
     <div className="blog-card">
       <div className="blog-img-wrapper">
-        <img src={blog.thumbnail} alt={blog.title} className="blog-thumbnail" />
+        <img src={blog.headImg} alt={blog.title} className="blog-thumbnail" />
       </div>
       <div className="blog-content">
         <div className="blog-duration">
@@ -31,7 +31,7 @@ const BlogSectionItem = ({ blog }) => {
           {durationStr}
         </div>
         <h3 className="blog-title">{blog.title}</h3>
-        <Link to={`/blogs/${blog.id}`} className="blog-readmore">
+        <Link to={`/blogs/${blog._id}`} className="blog-readmore">
           Read More
         </Link>
         <div className="blog-meta">

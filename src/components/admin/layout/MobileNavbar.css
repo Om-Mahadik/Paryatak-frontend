@@ -1,0 +1,43 @@
+.mobile-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f6; /* light theme to match topbar */
+  padding: 12px 20px;
+  height: 60px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: "Inter", sans-serif;
+}
+
+.mobile-navbar .logo img {
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.mobile-navbar .logo img:hover {
+  transform: scale(1.05);
+}
+
+.mobile-navbar .hamburger {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1f2937;
+  transition: transform 0.2s ease;
+}
+
+.mobile-navbar .hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* Only show on mobile */
+@media (min-width: 769px) {
+  .mobile-navbar {
+    display: none;
+  }
+}

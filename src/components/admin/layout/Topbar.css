@@ -1,0 +1,138 @@
+/* Topbar base */
+.topbar {
+  height: 80px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+  margin-left: 0;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  font-family: "Inter", sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Hamburger button */
+.hamburger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+/* Date container */
+.date-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.day-number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.month-year {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.month {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.year {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.weekday {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Topbar pill actions on right */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Pills */
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Admin pill */
+.admin-pill {
+  background: #e5e7eb;
+  color: #1f2937;
+}
+.admin-pill:hover {
+  background: #d1d5db;
+}
+
+/* Logout pill */
+.logout-pill {
+  background: #f87171;
+  color: #fff;
+  border: none;
+}
+.logout-pill:hover {
+  background: #ef6363;
+}
+
+/* Pill icon */
+.pill-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------------- Mobile Styles ---------------- */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block;
+  }
+
+  /* Date container smaller on mobile */
+  .day-number {
+    font-size: 26px;
+  }
+  .month-year {
+    font-size: 12px;
+  }
+
+  /* Hide weekday on mobile */
+  .weekday {
+    display: none;
+  }
+
+  /* Logout pill becomes circular icon-only */
+  .logout-pill {
+    padding: 6px;
+    border-radius: 50%;
+  }
+  .logout-pill span {
+    display: none;
+  }
+}

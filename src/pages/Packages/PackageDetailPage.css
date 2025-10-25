@@ -1,0 +1,153 @@
+/* General Page Styles */
+.package-page {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.package-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.package-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+.package-hero .hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+.package-hero .hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.package-hero .hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Overview Section */
+.package-overview {
+  padding: 3rem 10%;
+  text-align: center;
+}
+.package-overview p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Highlights Section */
+.package-highlights {
+  padding: 3rem 10%;
+  text-align: center;
+}
+.package-highlights ul {
+  list-style: none;
+  padding: 0;
+}
+.package-highlights li {
+  background: #fff3e6;
+  margin: 0.5rem auto;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  max-width: 500px;
+  font-size: 0.95rem;
+}
+
+/* CTA Section */
+.package-cta {
+  padding: 3rem 10%;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  border-radius: 12px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.package-cta .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  background: white;
+  color: #ff7e5f;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.package-cta .btn:hover {
+  background: #ff7e5f;
+  color: white;
+}
+
+/* Itinerary Section (Placeholder) */
+.package-itinerary {
+  padding: 3rem 10%;
+}
+.package-itinerary h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.package-itinerary .day-card {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+/* Gallery Section (Placeholder) */
+.package-gallery {
+  padding: 3rem 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.package-gallery img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Reviews Section (Placeholder) */
+.package-reviews {
+  padding: 3rem 10%;
+}
+.package-reviews h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.package-reviews .review-card {
+  background: #f1f1f1;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Brochure Section (Placeholder) */
+.package-brochure {
+  padding: 3rem 10%;
+  text-align: center;
+}
+.package-brochure a {
+  display: inline-block;
+  background: #ff7e5f;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.package-brochure a:hover {
+  background: #feb47b;
+}

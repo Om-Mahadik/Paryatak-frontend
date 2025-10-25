@@ -2,9 +2,22 @@ import React from "react";
 import "./UpcomingDate.css";
 import bigArrow from "../../../../imgs/icons/bigarrow.svg"; // adjust path
 
-const UpcomingDate = ({ start, end }) => {
-  const startParts = start.split(" "); // ["4", "Oct", "2025"]
-  const endParts = end.split(" ");     // ["9", "Oct", "2025"]
+const UpcomingDate = ({ dates }) => {
+  if (!dates || dates.length === 0) return null;
+
+  // Take first date only
+  const nextDate = dates[0];
+
+  const formatDateParts = (dateStr) => {
+    const dateObj = new Date(dateStr);
+    const day = dateObj.getDate();
+    const monthShort = dateObj.toLocaleString("default", { month: "short" });
+    const year = dateObj.getFullYear();
+    return [day, monthShort, year];
+  };
+
+  const startParts = formatDateParts(nextDate.startDate);
+  const endParts = formatDateParts(nextDate.endDate);
 
   return (
     <div className="upcoming-date-wrapper">

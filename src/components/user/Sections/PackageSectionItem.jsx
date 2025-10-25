@@ -5,27 +5,27 @@ import pinIcon from "../../../imgs/icons/pin.svg";
 import arrowIcon from "../../../imgs/icons/arrow-notail.svg";
 import starIcon from "../../../imgs/icons/star.svg";
 
-const PackageSectionItem = ({ title, country, description, thumbnail, rating, link }) => {
+const PackageSectionItem = ({ title, country, overview, mainImage, rating, slug }) => {
   const navigate = useNavigate();
 
   const handleKnowMore = () => {
-    if (link) {
+    if (slug) {
       window.scrollTo(0, 0); // Scroll to top before navigation
-      navigate(link);
+      navigate(`/packages/${slug}`);
     }
   };
 
   return (
     <div className="package-card">
       {/* Image */}
-      <img src={thumbnail} alt={title} className="package-image" />
+      <img src={mainImage} alt={title} className="package-image" />
 
       {/* Content */}
       <div className="package-content">
         <div className="package-header">
           <h3 className="package-name">{title}</h3>
           <div className="package-rating">
-            {Array.from({ length: rating }, (_, i) => (
+            {Array.from({ length: rating?.stars || 0 }, (_, i) => (
               <img key={i} src={starIcon} alt="star" className="star-icon" />
             ))}
           </div>
@@ -36,7 +36,7 @@ const PackageSectionItem = ({ title, country, description, thumbnail, rating, li
           <span>{country}</span>
         </div>
 
-        <p className="package-description">{description}</p>
+        <p className="package-description">{overview}</p>
 
         <button className="know-more-btn" onClick={handleKnowMore}>
           Know More

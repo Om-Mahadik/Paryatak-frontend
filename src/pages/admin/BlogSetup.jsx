@@ -3,7 +3,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
-import { getBlogById, createBlog, updateBlog, deleteBlog } from "../../services/blogService";
+import DeleteIcon from "../../imgs/icons/delete.svg";
+import { createBlog, updateBlog, getBlogById, deleteBlog } from "../../services/blogService";
 import "./BlogSetup.css";
 
 const BlogSetup = () => {
@@ -11,12 +12,19 @@ const BlogSetup = () => {
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
 
+  // Form state
   const [title, setTitle] = useState("");
-  const [headImg, setHeadImg] = useState(null);
-  const [previewHeadImg, setPreviewHeadImg] = useState(null);
+  const [duration, setDuration] = useState("");
+  const [views, setViews] = useState("");
+  const [uploadDate, setUploadDate] = useState("");
+  const [link, setLink] = useState("");
+  const [headImg, setHeadImg] = useState(null); // new file to upload
+  const [headImgUrl, setHeadImgUrl] = useState(null); // existing Firebase URL
+  const [previewHeadImg, setPreviewHeadImg] = useState(null); // local preview
   const [loading, setLoading] = useState(false);
-  const [fetchedHeadImgUrl, setFetchedHeadImgUrl] = useState(null);
+  const [popupMsg, setPopupMsg] = useState("");
 
+  // Quill editor
   const { quill, quillRef } = useQuill({
     theme: "snow",
     modules: {
@@ -24,26 +32,27 @@ const BlogSetup = () => {
         [{ font: [] }, { size: ["small", false, "large", "huge"] }],
         ["bold", "italic", "underline", "strike"],
         [{ color: [] }, { background: [] }],
-        [{ script: "sub" }, { script: "super" }],
-        [{ header: 1 }, { header: 2 }, "blockquote", "code-block"],
         [{ list: "ordered" }, { list: "bullet" }, { indent: "-1" }, { indent: "+1" }],
-        [{ direction: "rtl" }, { align: [] }],
-        ["link", "image", "video", "formula"],
+        ["link", "image", "video"],
         ["clean"],
       ],
     },
   });
 
-  // Fetch blog data
+  // Fetch existing blog if editing
   useEffect(() => {
     if (id) {
       const fetchBlog = async () => {
         try {
           const data = await getBlogById(id);
           setTitle(data.title);
+          setDuration(data.duration || "");
+          setViews(data.views || "");
+          setUploadDate(data.uploadDate ? data.uploadDate.slice(0, 10) : "");
+          setLink(data.link || "");
+          setHeadImgUrl(data.headImg || null);
           setPreviewHeadImg(data.headImg || null);
-          setFetchedHeadImgUrl(data.headImg || null);
-          if (quill) quill.root.innerHTML = data.content;
+          if (quill) quill.root.innerHTML = data.content || "";
         } catch (err) {
           console.error("Failed to fetch blog:", err);
         }
@@ -52,21 +61,7 @@ const BlogSetup = () => {
     }
   }, [id, quill]);
 
-  // Drag-and-drop handlers
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files[0];
-    if (file && file.type.startsWith("image/")) {
-      setHeadImg(file);
-      setPreviewHeadImg(URL.createObjectURL(file));
-    }
-  };
-
-  const handleDragOver = (e) => e.preventDefault();
-
-  const handleHeadImgClick = () => {
-    fileInputRef.current.click();
-  };
+  const handleHeadImgClick = () => fileInputRef.current.click();
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -76,35 +71,40 @@ const BlogSetup = () => {
     }
   };
 
+  const showPopup = (msg) => {
+    setPopupMsg(msg);
+    setTimeout(() => setPopupMsg(""), 3000);
+  };
+
   const handleSave = async () => {
     if (!quill) return;
     setLoading(true);
 
     try {
       const content = quill.root.innerHTML;
+      const blogData = {
+        title,
+        duration: duration ? Number(duration) : undefined,
+        views: views ? Number(views) : undefined,
+        uploadDate: uploadDate || new Date(),
+        link,
+        content,
+      };
 
       if (id) {
-        await updateBlog(
-          id,
-          { title, content },
-          headImg instanceof File ? headImg : null,
-          headImg instanceof File ? fetchedHeadImgUrl : null,
-          (progress) => console.log("Upload progress:", progress)
-        );
-        alert("Blog updated successfully!");
+        // Pass old Firebase URL if new image selected
+        const oldUrl = headImg ? headImgUrl : null;
+        await updateBlog(id, blogData, headImg, oldUrl, (progress) => console.log("Upload progress:", progress));
+        showPopup("Blog updated successfully!");
       } else {
-        await createBlog(
-          { title, content },
-          headImg instanceof File ? headImg : null,
-          (progress) => console.log("Upload progress:", progress)
-        );
-        alert("Blog created successfully!");
+        await createBlog(blogData, headImg, (progress) => console.log("Upload progress:", progress));
+        showPopup("Blog created successfully!");
       }
 
-      navigate("/admin/blogs");
+      setTimeout(() => navigate("/admin/blogs"), 1000);
     } catch (err) {
-      console.error(err);
-      alert("Something went wrong!");
+      console.error("Error saving blog:", err);
+      showPopup("Error saving blog!");
     } finally {
       setLoading(false);
     }
@@ -115,21 +115,19 @@ const BlogSetup = () => {
 
     try {
       await deleteBlog(id);
-      alert("Blog deleted successfully!");
-      navigate("/admin/blogs");
+      showPopup("Blog deleted successfully!");
+      setTimeout(() => navigate("/admin/blogs"), 1000);
     } catch (err) {
-      console.error(err);
-      alert("Failed to delete blog!");
+      console.error("Error deleting blog:", err);
+      showPopup("Error deleting blog!");
     }
   };
 
-  return (
-    <div className="blog-setup-container">
-      <div className="blog-card">
-        <div className="blog-header">
-          <h2>{id ? "Edit Blog" : "Create Blog"}</h2>
-        </div>
-
+return (
+  <div className="blog-setup-container">
+    <div className="blog-card professional-layout">
+      {/* ---------- Top Image ---------- */}
+      <div className="top-side">
         <input
           ref={fileInputRef}
           type="file"
@@ -137,45 +135,81 @@ const BlogSetup = () => {
           style={{ display: "none" }}
           onChange={handleFileChange}
         />
-
-        {/* Drag-and-drop header image */}
-        <div
-          className="head-img-dropzone"
-          onDrop={handleDrop}
-          onDragOver={handleDragOver}
-          onClick={handleHeadImgClick}
-        >
+        <div className="head-img-dropzone" onClick={handleHeadImgClick}>
           {previewHeadImg ? (
-            <img src={previewHeadImg} alt="Header Preview" className="head-img-preview-full" />
+            <>
+              <img
+                src={previewHeadImg}
+                alt="Header Preview"
+                className="head-img-preview-full"
+              />
+              <span className="overlay-text">
+                Click here to replace the image
+              </span>
+            </>
           ) : (
-            <p>Drag & Drop or Click to Upload Header Image</p>
+            <p>Click here to upload header image</p>
           )}
         </div>
+      </div>
 
+      {/* ---------- Bottom Form ---------- */}
+      <div className="bottom-side">
+        <h2>{id ? "Edit Blog" : "Create Blog"}</h2>
         <div className="blog-form">
-          <label className="blog-label">Title</label>
+          <label>Title</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter blog title"
-            className="blog-input"
           />
 
-          <label className="blog-label">Content</label>
+          <label>Duration (Numbers only)</label>
+          <input
+            type="number"
+            min="0"
+            placeholder="Enter duration"
+            value={duration}
+            onChange={(e) =>
+              setDuration(e.target.value.replace(/\D/g, ""))
+            }
+          />
+
+          <label>Views (Numbers only)</label>
+          <input
+            type="number"
+            min="0"
+            placeholder="Enter views count"
+            value={views}
+            onChange={(e) => setViews(e.target.value.replace(/\D/g, ""))}
+          />
+
+          <label>Upload Date</label>
+          <input
+            type="date"
+            value={uploadDate}
+            onChange={(e) => setUploadDate(e.target.value)}
+          />
+
+          <label>Link</label>
+          <input
+            type="text"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+          />
+
+          <label>Content</label>
           <div ref={quillRef} className="blog-editor-scrollable" />
 
+          {/* ---------- Action Buttons ---------- */}
           <div className="blog-actions">
-            <button onClick={handleSave} disabled={loading} className="save-btn">
+            <button className="pill-btn save-btn" onClick={handleSave} disabled={loading}>
               {id ? "Update Blog" : "Create Blog"}
             </button>
 
-            <button onClick={() => navigate("/admin/blogs")} className="cancel-btn">
-              Cancel
-            </button>
-
             {id && (
-              <button onClick={handleDelete} className="delete-btn">
+              <button className="pill-btn delete-btn" onClick={handleDelete}>
+                <img src={DeleteIcon} alt="Delete" className="btn-icon" />
                 Delete Blog
               </button>
             )}
@@ -183,7 +217,14 @@ const BlogSetup = () => {
         </div>
       </div>
     </div>
-  );
+
+    {popupMsg && <div className="popup">{popupMsg}</div>}
+  </div>
+);
+
+
+
+
 };
 
 export default BlogSetup;

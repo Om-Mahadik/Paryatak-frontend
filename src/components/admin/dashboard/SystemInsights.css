@@ -1,0 +1,42 @@
+.system-insights .insight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.insight-card {
+  background: #f1f4fa; /* light grey for professional look */
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #334155; /* dark grey text */
+  transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.insight-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.insight-icon {
+  color: #2563eb; /* subtle blue icon */
+}
+
+.insight-title {
+  font-weight: 500;
+  color: #1e293b; /* darker grey */
+}
+
+.insight-value {
+  font-weight: 600;
+  color: #334155;
+}

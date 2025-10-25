@@ -1,0 +1,148 @@
+.review-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.6rem 1.8rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 32px;
+  transition: all 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+}
+
+.review-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.review-header p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+/* Input + Arrow perfectly aligned */
+.review-input-wrapper {
+  display: flex;
+  align-items: stretch; /* ensures arrow aligns with input */
+  border: 1px solid #9d252500;
+  border-radius: 8px;
+  overflow: hidden;
+  gap: 8px;
+}
+
+.review-input-wrapper input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  border-radius: 15px;
+  font-size: 0.95rem;
+  color: #111;
+  background: transparent;
+  margin-top: 10px;
+}
+
+.generate-btn {
+  background: #c9d9ea;
+  border: none;
+  color: #000000;
+  padding: 0 1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+}
+
+.generate-btn:hover {
+  background: #e4e8f2;
+  transform: translateX(2px);
+}
+
+/* Generated link box */
+.review-link-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.link-text {
+  font-size: 0.9rem;
+  color: #111;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.link-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: #111;
+  border-radius: 8px;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+  transform: scale(1.1);
+}
+
+/* Popup */
+.custom-popup {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e40af;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: popupSlide 0.4s ease;
+}
+
+@keyframes popupSlide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+.link-text {
+  font-size: 0.9rem;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 21ch; /* limits to ~35 characters, adjust as needed */
+  display: inline-block; /* ensures max-width works */
+}

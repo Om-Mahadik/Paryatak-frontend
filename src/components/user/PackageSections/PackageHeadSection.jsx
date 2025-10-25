@@ -7,7 +7,7 @@ const PackageHeadSection = ({ data }) => {
   return (
     <div className="package-head-section">
       <div className="thumbnail">
-        <PackageHeadThumbnail thumbnail={data.thumbnail} />
+        <PackageHeadThumbnail thumbnail={data.mainImage} />
       </div>
       <div className="details">
         <PackageHeadDetails data={data} />

@@ -1,14 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // ✅ import useNavigate
+import { useNavigate } from "react-router-dom";
 import "./ConvenienceCard.css";
 import TickIcon from "../../../../imgs/icons/tick.svg";
 import DownloadIcon from "../../../../imgs/icons/download.svg";
 import UpcomingDate from "./UpcomingDate";
 
-const ConvenienceCard = ({ nextTour, brochureLink }) => {
-  const navigate = useNavigate(); // initialize navigate
+const ConvenienceCard = ({ dates, brochureLink }) => {
+  const navigate = useNavigate();
 
-  if (!nextTour) return null;
+  if (!dates || dates.length === 0) return null;
+
+  // Only consider upcoming dates (startDate >= tomorrow)
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const upcomingDates = dates.filter(d => new Date(d.startDate) >= tomorrow);
+  if (upcomingDates.length === 0) return null;
 
   const conveniencePoints = [
     "Round trip airfare included",
@@ -18,14 +24,6 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
     "Travel insurance covered",
     "Professional tour guide",
   ];
-
-  const formatDate = (dateStr) => {
-    const dateObj = new Date(dateStr);
-    const day = dateObj.getDate();
-    const monthShort = dateObj.toLocaleString("default", { month: "short" });
-    const year = dateObj.getFullYear();
-    return `${day} ${monthShort} ${year}`;
-  };
 
   // Opens brochure in a new tab
   const handleDownload = () => {
@@ -38,7 +36,7 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
 
   // Navigate to contact page
   const handleContact = () => {
-    navigate("/contact"); // change to your contact route
+    navigate("/contact");
   };
 
   return (
@@ -47,10 +45,8 @@ const ConvenienceCard = ({ nextTour, brochureLink }) => {
       <div className="next-tour">
         <h3>Upcoming</h3>
         <div className="next-tour-date">
-          <UpcomingDate
-            start={formatDate(nextTour.start)}
-            end={formatDate(nextTour.end)}
-          />
+          {/* Pass all upcoming dates, but UpcomingDate will pick first automatically */}
+          <UpcomingDate dates={upcomingDates} />
         </div>
       </div>
 

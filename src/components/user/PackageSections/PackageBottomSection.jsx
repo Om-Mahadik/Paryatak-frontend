@@ -32,9 +32,9 @@ const PackageBottomSection = ({ data }) => {
       case "Overview":
         return (
           <OverviewTab
-            description={data.description}
+            description={data.overview}
             highlights={data.highlights}
-            included={data.included}
+            inclusions={data.inclusions}
             groupDates={data.groupDates}
             brochure={data.brochure}
             reviews={data.reviews}
@@ -43,7 +43,7 @@ const PackageBottomSection = ({ data }) => {
       case "Itinerary":
         return <ItineraryTab itinerary={data.itinerary} />;
       case "Gallery":
-        return <GalleryTab gallery={data.gallery} />;
+        return <GalleryTab gallery={data.galleryImages} />;
       case "Terms":
         return <TermsTab />;
       default:

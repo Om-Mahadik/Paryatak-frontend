@@ -1,0 +1,62 @@
+.todays-activity {
+}
+
+.todays-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.activity-row {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activity-row:hover {
+  transform: translateY(-3px);
+  background: #f9fbff;
+}
+
+.activity-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.activity-icon {
+  background: #e0ecff;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-info h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #1e40af;
+  font-weight: 700;
+}
+
+.activity-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.activity-arrow {
+  color: #555;
+  transition: transform 0.2s ease;
+}
+
+.activity-row:hover .activity-arrow {
+  transform: translateX(4px);
+}

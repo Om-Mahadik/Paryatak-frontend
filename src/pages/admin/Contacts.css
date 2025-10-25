@@ -1,0 +1,250 @@
+/* ---------------- Contacts Page Wrapper ---------------- */
+.admin-contacts-container {
+  max-width: 880px;
+  margin: 2rem auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* ---------------- Header ---------------- */
+.contacts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.contacts-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sheet-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #d3d3d3;
+  color: #000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sheet-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------- Contact Card ---------------- */
+.admin-contact-card {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+/* Unread Highlight */
+.admin-contact-card.unread {
+  border-left: 5px solid #43a047;
+}
+
+/* ---------------- Contact Header (Compact + Clean) ---------------- */
+.contact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 14px !important;
+  background-color: #fafafa;
+  cursor: pointer;
+  line-height: 1.2;
+  margin: 0 !important;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-header * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
+}
+
+/* Compact text */
+.contact-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------------- Drawer ---------------- */
+.contact-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  padding: 0 18px;
+  background-color: #f9f9f9;
+}
+
+.contact-drawer.expanded {
+  max-height: 500px;
+  padding: 14px 18px;
+}
+
+/* ---------------- Drawer Top + Bottom ---------------- */
+.contact-drawer-top,
+.contact-drawer-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Make bottom buttons stay on left on all devices */
+.contact-drawer-bottom {
+  justify-content: flex-start;
+  margin-top: 12px;
+}
+
+/* Ensure delete button stays to right */
+.contact-drawer-bottom .delete-btn {
+  margin-left: auto; /* pushes delete button to the right */
+}
+
+/* ---------------- Drawer Buttons ---------------- */
+.contact-drawer-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: none;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.25s;
+  white-space: nowrap;
+}
+
+.contact-drawer-btn:hover {
+  background-color: #d5d5d5;
+}
+
+.contact-drawer-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Delete button style */
+.contact-drawer-btn.delete-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.contact-drawer-btn.delete-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* ---------------- Message Section ---------------- */
+.contact-message {
+  width: 100%;
+  margin-top: 12px;
+  padding-bottom: 20px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  border-bottom: 1px solid #eee;
+}
+
+/* Mark as Read Button */
+.popup-pill-btn.mark-read {
+  background-color: #2d2d2d;
+  color: white;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+/* ---------------- Info Section ---------------- */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  margin-bottom: 25px
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-info-item span {
+  font-weight: 500;
+}
+
+/* ---------------- Copy Icon ---------------- */
+.icon-btn {
+  margin-left: auto; /* pushes this button to the far right */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------------- Toast ---------------- */
+.custom-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInOut 3s forwards;
+}
+
+.custom-toast.success {
+  background-color: #43a047;
+}
+
+.custom-toast.error {
+  background-color: #777;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px);}
+  10% { opacity: 1; transform: translateX(-50%) translateY(0);}
+  90% { opacity: 1; transform: translateX(-50%) translateY(0);}
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px);}
+}
+
+/* ---------------- Responsive Adjustments ---------------- */
+@media (max-width: 768px) {
+  .admin-contacts-container {
+    padding: 0 15px;
+  }
+
+  /* On mobile, everything stays left-aligned (default) */
+  .contact-drawer-bottom {
+    justify-content: flex-start;
+  }
+}

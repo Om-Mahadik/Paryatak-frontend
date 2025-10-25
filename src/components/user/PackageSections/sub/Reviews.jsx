@@ -15,11 +15,11 @@ const Reviews = ({ reviews }) => {
         {displayReviews.map((rev, idx) => (
           <div key={idx} className="review-card">
             <div className="review-stars">
-              {Array.from({ length: rev.stars }).map((_, i) => (
+              {Array.from({ length: rev.rating }).map((_, i) => (
                 <img key={i} src={StarIcon} alt="star" className="star-icon" />
               ))}
             </div>
-            <p className="review-text">"{rev.review}"</p>
+            <p className="review-text">"{rev.comment}"</p>
             <p className="reviewer-name">~ {rev.name}</p>
           </div>
         ))}

@@ -1,0 +1,6 @@
+.quick-links-row {
+  display: flex;
+  flex-wrap: wrap; /* allows multiple rows */
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}

@@ -9,7 +9,7 @@ import Features from "./Features";
 import ConvenienceCard from "./ConvenienceCard";
 import Reviews from "./Reviews";
 
-const OverviewTab = ({ description, highlights, included, groupDates, brochure, reviews }) => {
+const OverviewTab = ({ description, highlights, inclusions, groupDates, brochure, reviews }) => {
   // Format the next tour date as a string
   const nextTour = groupDates && groupDates.length > 0 ? groupDates[0] : null;
 
@@ -23,12 +23,12 @@ const OverviewTab = ({ description, highlights, included, groupDates, brochure, 
         <UpcomingTours dates={groupDates} />
         
         <Highlights title="Highlights" items={highlights} />
-        <Inclusions title="What's Included" items={included} />
+        <Inclusions title="What's Included" items={inclusions} />
       </div>
 
       {/* Right Column 40% */}
       <div className="overview-right">
-        <ConvenienceCard nextTour={nextTour} brochureLink={brochure} />
+        <ConvenienceCard dates={groupDates} brochureLink={brochure} />
         <Reviews reviews={reviews} />
       </div>
     </div>

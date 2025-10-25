@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ContactForm.css";
-import { sendContactFormToSheet } from "../../../services/contactService";
+import { sendContactData } from "../../../services/contactService";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,9 +10,8 @@ const ContactForm = () => {
     phone: "",
     message: "",
   });
-
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [toast, setToast] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,13 +20,11 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(false);
+    setToast(null);
 
-    const result = await sendContactFormToSheet(formData);
-
-    setLoading(false);
-    if (result) {
-      setSuccess(true);
+    try {
+      await sendContactData(formData);
+      setToast({ message: "Message sent successfully!", type: "success" });
       setFormData({
         firstName: "",
         lastName: "",
@@ -35,15 +32,24 @@ const ContactForm = () => {
         phone: "",
         message: "",
       });
-    } else {
-      alert("Something went wrong. Please try again.");
+    } catch (err) {
+      setToast({ message: "Something went wrong. Try again.", type: "error" });
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setTimeout(() => setToast(null), 3000);
     }
   };
 
   return (
     <div className="contact-form">
+      {toast && (
+        <div className={`custom-toast ${toast.type}`}>
+          {toast.message}
+        </div>
+      )}
+
       <form onSubmit={handleSubmit}>
-        {/* First Row */}
         <div className="form-row">
           <div className="form-group">
             <label>First Name</label>
@@ -69,7 +75,6 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* Email */}
         <div className="form-group">
           <label>Email Address</label>
           <input
@@ -82,7 +87,6 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Phone */}
         <div className="form-group">
           <label>Phone Number</label>
           <input
@@ -95,7 +99,6 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Message */}
         <div className="form-group">
           <label>Message</label>
           <textarea
@@ -108,13 +111,9 @@ const ContactForm = () => {
           />
         </div>
 
-        {/* Submit Button */}
         <button type="submit" className="submit-btn" disabled={loading}>
           {loading ? "Sending..." : "Submit"}
         </button>
-
-        {/* Success Message */}
-        {success && <p className="success-msg">Message sent successfully!</p>}
       </form>
     </div>
   );

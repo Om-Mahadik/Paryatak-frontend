@@ -15,6 +15,16 @@ const pastelColors = [
 const UpcomingTours = ({ dates }) => {
   if (!dates || dates.length === 0) return null;
 
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  // Filter only upcoming dates (startDate >= tomorrow)
+  const upcomingDates = dates
+    .filter(d => new Date(d.startDate) >= tomorrow)
+    .sort((a, b) => new Date(a.startDate) - new Date(b.startDate)); // sort to ensure next date first
+
+  if (upcomingDates.length === 0) return null;
+
   // Helper to format date as "D MMM YYYY"
   const formatDate = (dateStr) => {
     const dateObj = new Date(dateStr);
@@ -28,18 +38,21 @@ const UpcomingTours = ({ dates }) => {
     <div className="upcoming-tours-section">
       <h3>Upcoming Group Departures</h3>
 
-      {/* First date as UpcomingDate */}
+      {/* Pass all upcoming dates to UpcomingDate */}
       <div className="upcoming-date-left">
-        <UpcomingDate
-          start={formatDate(dates[0].start)}
-          end={formatDate(dates[0].end)}
-        />
+      <UpcomingDate
+        dates={upcomingDates.map(d => ({
+          startDate: formatDate(d.startDate),
+          endDate: formatDate(d.endDate),
+          group: d.group
+        }))}
+      />
       </div>
 
       {/* Display all dates normally */}
       <ul>
-        {dates.map((d, idx) => {
-          const startDate = new Date(d.start);
+        {upcomingDates.map((d, idx) => {
+          const startDate = new Date(d.startDate);
           const monthShort = startDate.toLocaleString("default", { month: "short" });
           const color = pastelColors[idx % pastelColors.length];
 
@@ -49,7 +62,7 @@ const UpcomingTours = ({ dates }) => {
                 {monthShort}
               </span>
               <span className="tour-text">
-                {d.group} : {formatDate(d.start)} to {formatDate(d.end)}
+                {d.group} : {formatDate(d.startDate)} to {formatDate(d.endDate)}
               </span>
             </li>
           );

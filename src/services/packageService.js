@@ -1,104 +1,101 @@
 import axios from "axios";
-import { uploadImage, deleteImage, updateImage } from "../firebase/storage";
 
-const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/packages`;
+const API_BASE = `${process.env.REACT_APP_API_BASE_URL}/api/packages`;
 
-export const getPackages = async () => {
+// Fetch all packages
+export const fetchPackages = async () => {
   const res = await axios.get(API_BASE);
   return res.data;
 };
 
+// Get a single package by ID
 export const getPackageById = async (id) => {
-  const res = await axios.get(`${API_BASE}/${id}`);
-  return res.data;
+  try {
+    const res = await axios.get(`${API_BASE}/${id}`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching package:", err);
+    throw err;
+  }
 };
 
-/**
- * Create package with thumbnail and gallery images
- * onProgress: callback function to report progress per file
- */
-export const createPackageWithImages = async (
-  packageData,
-  thumbnailFile,
-  imageFiles = [],
-  onProgress // <-- new callback
-) => {
-  // Upload thumbnail
-  if (thumbnailFile) {
-    packageData.thumbnail = await uploadImage(thumbnailFile, (p) => {
-      if (onProgress) onProgress("thumbnail", p);
-    });
+// Get a single package by slug
+export const getPackageBySlug = async (slug) => {
+  try {
+    const res = await axios.get(`${API_BASE}/slug/${slug}`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching package by slug:", err);
+    throw err;
   }
-
-  // Upload other images one by one
-  if (imageFiles.length > 0) {
-    const urls = [];
-    for (let i = 0; i < imageFiles.length; i++) {
-      const url = await uploadImage(imageFiles[i], (p) => {
-        if (onProgress) onProgress(`image_${i}`, p);
-      });
-      urls.push(url);
-    }
-    packageData.images = urls;
-  }
-
-  const res = await axios.post(API_BASE, packageData);
-  return res.data;
 };
 
-/**
- * Update package with deleted images, new thumbnail, and new images
- */
-export const updatePackageWithImages = async (
-  id,
-  packageData,
-  newThumbnailFile = null,
-  newImageFiles = [],
-  deletedImages = [],
-  onProgress // <-- new callback
-) => {
-  // Delete removed gallery images from Firebase
-  if (deletedImages.length > 0) {
-    await Promise.all(deletedImages.map((url) => deleteImage(url)));
-    packageData.images = (packageData.images || []).filter(
-      (url) => !deletedImages.includes(url)
-    );
+// Create a new package
+export const createPackage = async (packageData) => {
+  try {
+    const res = await axios.post(API_BASE, packageData);
+    return res.data;
+  } catch (err) {
+    console.error("Error creating package:", err);
+    throw err;
   }
-
-  // Update thumbnail if new
-  if (newThumbnailFile) {
-    packageData.thumbnail = await updateImage(
-      packageData.thumbnail,
-      newThumbnailFile,
-      "packages",
-      (p) => {
-        if (onProgress) onProgress("thumbnail", p);
-      }
-    );
-  }
-
-  // Upload new gallery images
-  if (newImageFiles.length > 0) {
-    for (let i = 0; i < newImageFiles.length; i++) {
-      const url = await uploadImage(newImageFiles[i], (p) => {
-        if (onProgress)
-          onProgress(`image_${(packageData.images || []).length + i}`, p);
-      });
-      packageData.images = [...(packageData.images || []), url];
-    }
-  }
-
-  const res = await axios.put(`${API_BASE}/${id}`, packageData);
-  return res.data;
 };
 
-export const deletePackageById = async (id, packageData) => {
-  // Delete images from Firebase first
-  if (packageData.thumbnail) await deleteImage(packageData.thumbnail);
-  if (packageData.images && packageData.images.length > 0) {
-    await Promise.all(packageData.images.map((url) => deleteImage(url)));
+// Update existing package
+export const updatePackage = async (id, packageData) => {
+  try {
+    const res = await axios.put(`${API_BASE}/${id}`, packageData);
+    return res.data;
+  } catch (err) {
+    console.error("Error updating package:", err);
+    throw err;
   }
+};
 
-  const res = await axios.delete(`${API_BASE}/${id}`);
-  return res.data;
+// Delete package (optional)
+export const deletePackage = async (id) => {
+  try {
+    const res = await axios.delete(`${API_BASE}/${id}`);
+    return res.data;
+  } catch (err) {
+    console.error("Error deleting package:", err);
+    throw err;
+  }
+};
+
+
+
+
+
+// Fetch International Packages
+export const fetchInternationalPackages = async () => {
+  try {
+    const res = await axios.get(`${API_BASE}/international`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching international packages:", err);
+    throw err;
+  }
+};
+
+// Fetch National Packages
+export const fetchNationalPackages = async () => {
+  try {
+    const res = await axios.get(`${API_BASE}/national`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching international packages:", err);
+    throw err;
+  }
+};
+
+// Fetch Featured Packages
+export const fetchFeaturedPackages = async () => {
+  try {
+    const res = await axios.get(`${API_BASE}/featured`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching featured packages:", err);
+    throw err;
+  }
 };

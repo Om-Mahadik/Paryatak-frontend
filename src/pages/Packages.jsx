@@ -9,13 +9,12 @@ const Packages = () => {
   //      <CustomPackagesSection packages={customPackages} />
   return (
     <div className="packages-page">
-      <InternationalPackagesSection packages={internationalPackages} />
-      <NationalPackagesSection packages={nationalPackages} />
+      <InternationalPackagesSection />
+      <NationalPackagesSection />
+
 
     </div>
   );
 };
 
 export default Packages;
-
-

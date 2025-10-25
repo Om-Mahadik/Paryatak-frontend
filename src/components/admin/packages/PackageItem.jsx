@@ -1,35 +1,49 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import starIcon from "../../../imgs/icons/star.svg";
 
 const PackageItem = ({ pkg }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/admin/packages/${pkg._id}`); // navigate to edit page
+    navigate(`/admin/package-setup/${pkg._id}`);
   };
 
+  const stars = pkg.rating?.stars ? Math.round(pkg.rating.stars) : 0;
+
   return (
-    <div
-      onClick={handleClick}
-      style={{
-        border: "1px solid #ccc",
-        borderRadius: "8px",
-        padding: "10px",
-        width: "250px",
-        cursor: "pointer",
-        transition: "0.2s",
-      }}
-    >
+    <div className="admin-package-card" onClick={handleClick}>
       <img
-        src={pkg.thumbnail}
+        src={pkg.mainImage || pkg.thumbnail}
         alt={pkg.title}
-        style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "5px" }}
+        className="admin-package-image"
       />
-      <h3>{pkg.title}</h3>
-      <p>{pkg.description}</p>
-      <p>Price: ₹{pkg.price}</p>
-      <p>Category: {pkg.category}</p>
-      <p>Duration: {pkg.duration}</p>
+      <div className="admin-package-content">
+        <h3 className="admin-package-title">{pkg.title}</h3>
+
+        {/* Star rating */}
+        <div className="admin-package-stars">
+          {Array.from({ length: stars }, (_, i) => (
+            <img key={i} src={starIcon} alt="star" />
+          ))}
+        </div>
+
+        
+
+        <div className="admin-package-details">
+          <span className="price">
+            {pkg.price ? `₹${pkg.price}` : "Check details"}
+          </span>
+          <span className="category">
+            {pkg.isInternational ? "🌍" : "🇮🇳"}
+          </span>
+        </div>
+
+        <p className="admin-package-duration">
+          {pkg.days} Days / {pkg.nights} Nights
+        </p>
+        
+      </div>
     </div>
   );
 };

@@ -1,0 +1,24 @@
+.quick-link-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff; /* light grey background */
+  border-radius: 10px;
+  padding: 0.6rem; /* slightly more padding */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 50px;   /* bigger card */
+  height: 50px;  /* bigger card */
+}
+
+.quick-link-card-icon:hover {
+  background: #e2ecf2;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.link-icon-only {
+  width: 28px;   /* bigger icon */
+  height: 28px;  /* bigger icon */
+  object-fit: contain;
+}

@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Popup from "..//Popup/Popup"; // ✅ import Popup
 import AccessButton from "../Popup/AccessButton"; // ✅ import AccessButton
 import "./UserLayout.css";
 
+import { logVisit } from "../../../services/visitService"; 
+
+
 const UserLayout = ({ children }) => {
+
+  useEffect(() => {
+    logVisit(); // logs a visit whenever this layout mounts
+  }, []);
+
+
   return (
     <>
       <Navbar />      

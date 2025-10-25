@@ -1,50 +1,75 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getPackages } from "../../services/packageService";
 import PackageItem from "../../components/admin/packages/PackageItem";
+import { fetchPackages, deletePackage } from "../../services/packageService";
+import "./Packages.css";
 
 const Packages = () => {
   const [packages, setPackages] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("All");
   const navigate = useNavigate();
 
-  // Fetch all packages
-  const fetchPackages = async () => {
+  const loadPackages = async () => {
     try {
-      setLoading(true);
-      const data = await getPackages();
+      const data = await fetchPackages();
       setPackages(data);
-      setLoading(false);
     } catch (err) {
-      console.error(err);
-      setLoading(false);
+      console.error("Error fetching packages:", err);
     }
   };
 
   useEffect(() => {
-    fetchPackages();
+    loadPackages();
   }, []);
 
+  const handleDelete = async (id) => {
+    if (!window.confirm("Are you sure you want to delete this package?")) return;
+    try {
+      await deletePackage(id);
+      setPackages(packages.filter(pkg => pkg._id !== id));
+    } catch (err) {
+      console.error("Error deleting package:", err);
+    }
+  };
+
+  const filteredPackages = packages.filter(pkg => {
+    if (activeTab === "All") return true;
+    if (activeTab === "International") return pkg.isInternational;
+    if (activeTab === "National") return !pkg.isInternational;
+    return true;
+  });
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h2>Packages</h2>
-
-      <button
-        onClick={() => navigate("/admin/packages/new")}
-        style={{ marginBottom: "20px" }}
-      >
-        Create New Package
-      </button>
-
-      {loading ? (
-        <p>Loading packages...</p>
-      ) : (
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-          {packages.map((pkg) => (
-            <PackageItem key={pkg._id} pkg={pkg} />
+    <div className="packages-page">
+      <div className="packages-header">
+        <div className="tabs">
+          {["All", "International", "National"].map(tab => (
+            <button
+              key={tab}
+              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
           ))}
         </div>
-      )}
+        <button
+          className="create-package-btn"
+          onClick={() => navigate("/admin/package-setup")}
+        >
+          + Create New Package
+        </button>
+      </div>
+
+      <div className="packages-grid">
+        {filteredPackages.length === 0 ? (
+          <p className="no-packages-text">No packages available.</p>
+        ) : (
+          filteredPackages.map(pkg => (
+            <PackageItem key={pkg._id} pkg={pkg} handleDelete={handleDelete} />
+          ))
+        )}
+      </div>
     </div>
   );
 };

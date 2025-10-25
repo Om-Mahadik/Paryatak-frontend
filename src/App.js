@@ -7,16 +7,10 @@ import UserLayout from "./components/user/layout/UserLayout";
 import ContactUs from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import UserPackages from "./pages/Packages"; // Renamed for user
-import DubaiPackage from "./pages/Packages/DubaiPackage";
-import BaliPackage from "./pages/Packages/BaliPackage";
-import VietnamPackage from "./pages/Packages/VietnamPackage";
-import SriLankaPackage from "./pages/Packages/SriLankaPackage";
-import GoldenTrianglePackage from "./pages/Packages/GoldenTrianglePackage";
-import HampiPackage from "./pages/Packages/HampiPackage";
-import BangaloreMysoreOotyPackage from "./pages/Packages/BangaloreMysoreOotyPackage";
+import PackageDetailPage from "./pages/Packages/PackageDetailPage";
 import Blogs from "./pages/Blogs";
 import BlogPage from "./pages/BlogPage";
-
+import ReviewWrite from "./pages/ReviewWrite";
 import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 
 // -------------------- Admin Pages --------------------
@@ -26,6 +20,9 @@ import AdminPackages from "./pages/admin/Packages"; // Renamed for admin
 import PackageSetup from "./pages/admin/PackageSetup";
 import AdminBlogs from "./pages/admin/Blogs";
 import BlogSetup from "./pages/admin/BlogSetup"; 
+import Popups from "./pages/admin/Popups";
+import Contacts from "./pages/admin/Contacts";
+import Reviews from "./pages/admin/Reviews";
 import Layout from "./components/admin/layout/Layout";
 import PrivateRoute from "./components/admin/PrivateRoute";
 import TermsConditions from "./pages/Legal/TermsConditions";
@@ -86,13 +83,18 @@ function App() {
 
         <Route path="/blogs/:id" element={<UserLayout><BlogPage /></UserLayout>} />
 
-        <Route path="/packages/dubai" element={<UserLayout><DubaiPackage /></UserLayout>} />
-        <Route path="/packages/bali" element={<UserLayout><BaliPackage /></UserLayout>} />
-        <Route path="/packages/vietnam" element={<UserLayout><VietnamPackage /></UserLayout>} />
-        <Route path="/packages/sri-lanka" element={<UserLayout><SriLankaPackage /></UserLayout>} />
-        <Route path="/packages/golden-triangle" element={<UserLayout><GoldenTrianglePackage /></UserLayout>} />
-        <Route path="/packages/hampi" element={<UserLayout><HampiPackage /></UserLayout>} />
-        <Route path="/packages/bangalore-mysore-ooty" element={<UserLayout><BangaloreMysoreOotyPackage /></UserLayout>} />
+        <Route
+          path="/packages/:slug"
+          element={
+            <UserLayout>
+              <PackageDetailPage /> {/* New single package page */}
+            </UserLayout>
+          }
+        />
+
+        <Route path="/reviews/:name?" element={<UserLayout><ReviewWrite /></UserLayout>} />
+
+
 
         <Route
           path="/legal/privacy-policy"
@@ -129,34 +131,49 @@ function App() {
           }
         />
 
-        {/* -------------------- Admin Login -------------------- */}
-        <Route path="/admin" element={<AdminLogin />} />
+        {/* Admin Login - public */}
+        <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* -------------------- Protected Admin Routes -------------------- */}
+        {/* Protected Admin Routes */}
         <Route
           path="/admin/*"
           element={
             <PrivateRoute>
-              <Layout /> {/* Layout wraps all nested admin pages */}
+              <Layout />
             </PrivateRoute>
           }
         >
-          {/* Nested admin pages */}
-          <Route index element={<Navigate to="dashboard" />} /> {/* default page */}
+          {/* Default redirect to dashboard */}
+          <Route index element={<Navigate to="dashboard" replace />} />
 
+          {/* Dashboard */}
           <Route path="dashboard" element={<Dashboard />} />
 
-          {/* Admin Packages Routes */}
+          {/* Packages */}
           <Route path="packages" element={<AdminPackages />} />
-          <Route path="packages/:id" element={<PackageSetup />} />
-          <Route path="packages/new" element={<PackageSetup />} />
 
-          {/* Admin Blogs Routes */}
-          <Route path="blogs" element={<AdminBlogs />} />
-          <Route path="blogs/new" element={<BlogSetup />} />
-          <Route path="blogs/:id" element={<BlogSetup />} /> 
+          {/* Package Setup */}
+          <Route path="package-setup" element={<PackageSetup />} />
+          <Route path="package-setup/:id" element={<PackageSetup />} />
+          
+          {/* Blogs */}
+          <Route path='blogs' element={<AdminBlogs />} />
+
+          {/* Blog Setup */}
+          <Route path="blog-setup" element={<BlogSetup />} />
+          <Route path="blog-setup/:id" element={<BlogSetup />} />
+
+          {/* Popups */}
+          <Route path="popups" element={<Popups />} />
+
+          {/* Contacts */}
+          <Route path="contacts" element={<Contacts />} />
+
+          {/* Reviews */}
+          <Route path="reviews" element={<Reviews />} />
 
         </Route>
+        
       </Routes>
     </Router>
   );

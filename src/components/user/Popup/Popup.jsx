@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Popup.css";
 import popupImg from "../../../imgs/home/popup.jpg";
-import { sendPopupDataToSheet } from "../../../services/popupService";
+import { sendPopupData } from "../../../services/popupService";
 
 const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +12,7 @@ const Popup = () => {
     const closedTime = localStorage.getItem("popupClosedTime");
     const now = new Date().getTime();
 
-    if (submitted === "true") return; // never show again if submitted
+    if (submitted === "true") return;
 
     const initialTimer = setTimeout(() => {
       if (!closedTime || now - parseInt(closedTime) > 15 * 60 * 1000) {
@@ -40,9 +40,9 @@ const Popup = () => {
     e.preventDefault();
     const name = e.target[0].value;
     const phone = e.target[1].value;
-  
-    await sendPopupDataToSheet({ name, phone }); // send to sheet
-  
+
+    await sendPopupData({ name, phone });
+
     localStorage.setItem("popupSubmitted", "true");
     setIsOpen(false);
   };
@@ -56,9 +56,7 @@ const Popup = () => {
   return (
     <div className="popup-overlay" onClick={handleOverlayClick}>
       <div className="popup-container">
-        <button className="popup-close" onClick={handleClose}>
-          ✕
-        </button>
+        <button className="popup-close" onClick={handleClose}>✕</button>
 
         <div className="popup-left">
           <h2 className="popup-title">Let’s Stay Connected</h2>
@@ -73,9 +71,7 @@ const Popup = () => {
             <label>
               <input type="text" placeholder="Enter Your Phone Here" required />
             </label>
-            <button type="submit" className="popup-submit">
-              Submit
-            </button>
+            <button type="submit" className="popup-submit">Submit</button>
           </form>
         </div>
 

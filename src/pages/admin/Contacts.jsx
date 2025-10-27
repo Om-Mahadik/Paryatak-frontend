@@ -89,7 +89,7 @@ const Contacts = () => {
           className="sheet-btn"
           onClick={() =>
             window.open(
-              "https://docs.google.com/spreadsheets/d/1Aw8cZxQahHKl79g_wCEIWWZ6XTw5lyoNMXf4t6WIa0M/edit?gid=0",
+              "https://docs.google.com/spreadsheets/d/18fLdJwRXnov8QbaE6KRWPLm1R9BP6_rd5uTJa723Dfs/edit?gid=0#gid=0",
               "_blank"
             )
           }

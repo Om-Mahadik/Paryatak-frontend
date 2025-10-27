@@ -4,13 +4,16 @@ import NationalPackagesSection from "../components/user/PackageSections/National
 //import CustomPackagesSection from "../components/user/PackageSections/CustomPackagesSection";
 import { internationalPackages, nationalPackages } from "../data/packages/packages";
 import "./Packages.css";
+import CustomPackage from "../components/user/PackageSections/CustomPackage";
 
 const Packages = () => {
   //      <CustomPackagesSection packages={customPackages} />
   return (
     <div className="packages-page">
+      <CustomPackage />
       <InternationalPackagesSection />
       <NationalPackagesSection />
+      
 
 
     </div>

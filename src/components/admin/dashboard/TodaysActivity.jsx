@@ -32,19 +32,19 @@ const TodaysActivity = () => {
       icon: <Bell size={20} />, 
       label: "Popups Submitted", 
       count: activity.popupsSubmitted, 
-      link: "/popups" 
+      link: "/admin/popups" 
     },
     { 
       icon: <Send size={20} />, 
       label: "People Contacted", 
       count: activity.peopleContacted, 
-      link: "/contacts" 
+      link: "/admin/contacts" 
     },
     { 
       icon: <Star size={20} />, 
       label: "Reviews Received", 
       count: activity.reviewsReceived, 
-      link: "/reviews" 
+      link: "/admin/reviews" 
     },
   ];
 

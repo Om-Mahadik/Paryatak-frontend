@@ -6,6 +6,7 @@ import logo from "../../../imgs/logo.png";
 import dashboardIcon from "../../../imgs/icons/dashboard.svg";
 import packagesIcon from "../../../imgs/icons/packages.svg";
 import blogsIcon from "../../../imgs/icons/blogs.svg";
+import formIcon from "../../../imgs/icons/form.svg";
 import popupsIcon from "../../../imgs/icons/popups.svg";
 import contactsIcon from "../../../imgs/icons/contacts.svg";
 import reviewsIcon from "../../../imgs/icons/reviews.svg";
@@ -15,6 +16,7 @@ const Sidebar = ({ isOpen, isMobile, toggleSidebar }) => {
     { to: "/admin/dashboard", icon: dashboardIcon, label: "Dashboard" },
     { to: "/admin/packages", icon: packagesIcon, label: "Packages" },
     { to: "/admin/blogs", icon: blogsIcon, label: "Blogs" },
+    { to: "/admin/forms", icon: formIcon, label: "Forms" },
     { to: "/admin/popups", icon: popupsIcon, label: "Popups" },
     { to: "/admin/contacts", icon: contactsIcon, label: "Contacts" },
     { to: "/admin/reviews", icon: reviewsIcon, label: "Reviews" },

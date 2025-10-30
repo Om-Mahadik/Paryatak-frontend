@@ -23,6 +23,7 @@ import BlogSetup from "./pages/admin/BlogSetup";
 import Popups from "./pages/admin/Popups";
 import Contacts from "./pages/admin/Contacts";
 import Reviews from "./pages/admin/Reviews";
+import Forms from "./pages/admin/Forms";
 import Layout from "./components/admin/layout/Layout";
 import PrivateRoute from "./components/admin/PrivateRoute";
 import TermsConditions from "./pages/Legal/TermsConditions";
@@ -171,6 +172,9 @@ function App() {
 
           {/* Reviews */}
           <Route path="reviews" element={<Reviews />} />
+
+          {/* Forms */}
+          <Route path="forms" element={<Forms />} />
 
         </Route>
         

@@ -17,7 +17,6 @@ const BlogSetup = () => {
   const [duration, setDuration] = useState("");
   const [views, setViews] = useState("");
   const [uploadDate, setUploadDate] = useState("");
-  const [link, setLink] = useState("");
   const [headImg, setHeadImg] = useState(null); // new file to upload
   const [headImgUrl, setHeadImgUrl] = useState(null); // existing Firebase URL
   const [previewHeadImg, setPreviewHeadImg] = useState(null); // local preview
@@ -49,7 +48,6 @@ const BlogSetup = () => {
           setDuration(data.duration || "");
           setViews(data.views || "");
           setUploadDate(data.uploadDate ? data.uploadDate.slice(0, 10) : "");
-          setLink(data.link || "");
           setHeadImgUrl(data.headImg || null);
           setPreviewHeadImg(data.headImg || null);
           if (quill) quill.root.innerHTML = data.content || "";
@@ -87,7 +85,6 @@ const BlogSetup = () => {
         duration: duration ? Number(duration) : undefined,
         views: views ? Number(views) : undefined,
         uploadDate: uploadDate || new Date(),
-        link,
         content,
       };
 
@@ -189,13 +186,6 @@ return (
             type="date"
             value={uploadDate}
             onChange={(e) => setUploadDate(e.target.value)}
-          />
-
-          <label>Link</label>
-          <input
-            type="text"
-            value={link}
-            onChange={(e) => setLink(e.target.value)}
           />
 
           <label>Content</label>

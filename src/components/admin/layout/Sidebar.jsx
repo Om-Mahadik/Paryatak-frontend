@@ -10,6 +10,7 @@ import formIcon from "../../../imgs/icons/form.svg";
 import popupsIcon from "../../../imgs/icons/popups.svg";
 import contactsIcon from "../../../imgs/icons/contacts.svg";
 import reviewsIcon from "../../../imgs/icons/reviews.svg";
+import sectionIcon from "../../../imgs/icons/section.svg";
 
 const Sidebar = ({ isOpen, isMobile, toggleSidebar }) => {
   const links = [
@@ -20,6 +21,8 @@ const Sidebar = ({ isOpen, isMobile, toggleSidebar }) => {
     { to: "/admin/popups", icon: popupsIcon, label: "Popups" },
     { to: "/admin/contacts", icon: contactsIcon, label: "Contacts" },
     { to: "/admin/reviews", icon: reviewsIcon, label: "Reviews" },
+    { to: "/admin/hero-section", icon: sectionIcon, label: "Hero Sections" },
+    
   ];
 
   return (

@@ -29,6 +29,8 @@ import PrivateRoute from "./components/admin/PrivateRoute";
 import TermsConditions from "./pages/Legal/TermsConditions";
 import RefundPolicy from "./pages/Legal/RefundPolicy";
 import Disclaimer from "./pages/Legal/Disclaimer";
+import HeroSectionAdmin from "./pages/admin/HeroSectionAdmin";
+import HeroSectionSetup from "./pages/admin/HeroSectionSetup";
 
 
 function App() {
@@ -175,6 +177,13 @@ function App() {
 
           {/* Forms */}
           <Route path="forms" element={<Forms />} />
+
+          {/* Hero Section */}
+          <Route path="hero-section" element={<HeroSectionAdmin />} />
+
+          {/* Hero Section Setup */}
+          <Route path="hero-section-setup" element={<HeroSectionSetup />} />
+          <Route path="hero-section-setup/:id" element={<HeroSectionSetup />} />
 
         </Route>
         

@@ -8,6 +8,7 @@ import OurProcessSection from "../components/user/Sections/OurProcessSection";
 import FAQSection from "../components/user/contact/FAQSection";
 import RotatingEarth from "../components/user/Sections/RotatingEarth";
 import EarthSection from "../components/user/Sections/EarthSection";
+import FeaturesSection from "../components/user/Sections/FeaturesSection";
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <HeroSection />
       <ParagraphSection />
       <EarthSection />
+      <FeaturesSection />
       <PackagesSection />
       <WhyChooseUsSection />
       <OurProcessSection />

@@ -1,0 +1,160 @@
+.orbit-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  position: relative;
+  overflow: hidden;
+
+  /* 🌟 White card background */
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  max-width: 1100px;
+  margin: 10px auto;
+}
+
+/* 🌐 Desktop layout: icons left, content right */
+@media (min-width: 900px) {
+  .orbit-section {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 10px 60px;
+  }
+
+  .orbit-details {
+    margin-top: 0;
+    text-align: left;
+    max-width: 400px;
+  }
+}
+
+/* Orbit Circle Wrapper */
+.orbit-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+/* Center Circle */
+.orbit-center-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.center-icon {
+  width: 70px;
+  height: 70px;
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Orbit Icons */
+.orbit-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: 0.9;
+  transition: all 1s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orbit-icon img {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Active icon highlight */
+.orbit-icon.active {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 12px #aee4b0);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Circular positions */
+.orbit-1 { top: 10%; left: 45%; animation-delay: 0s; }
+.orbit-2 { top: 25%; left: 72%; animation-delay: 0.5s; }
+.orbit-3 { top: 50%; left: 82%; animation-delay: 1s; }
+.orbit-4 { top: 75%; left: 70%; animation-delay: 1.5s; }
+.orbit-5 { top: 86%; left: 45%; animation-delay: 2s; }
+.orbit-6 { top: 75%; left: 19%; animation-delay: 2.5s; }
+.orbit-7 { top: 50%; left: 8%; animation-delay: 3s; }
+.orbit-8 { top: 22%; left: 17%; animation-delay: 3.5s; }
+
+/* Floating movement */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+/* Pulse for center */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.85; }
+}
+
+/* Text section */
+.orbit-details {
+  margin-top: 60px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.orbit-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.orbit-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+
+.orbit-points {
+  list-style-type: disc;
+  margin-top: 25px;
+  padding-left: 80px;  /* Adds left padding for bullets */
+  text-align: left;     /* Ensures bullets and text align left */
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.orbit-points li {
+  margin-bottom: 6px;
+}
+

@@ -10,6 +10,7 @@
     "axios": "^1.12.2",
     "firebase": "^12.3.0",
     "framer-motion": "^12.23.22",
+    "gsap": "^3.13.0",
     "lucide-react": "^0.548.0",
     "quill": "^2.0.3",
     "react": "^18.3.1",

@@ -1,16 +1,12 @@
 .floating-balloon {
   position: fixed;
   bottom: 20px;
-  left: 20px;
-  width: 90px;
+  left: 20px; /* bottom-left corner */
+  width: 100px;
   height: auto;
   z-index: 9999;
   cursor: pointer;
   user-select: none;
-  pointer-events: auto;
-  transition: transform 0.3s ease;
-}
-
-.floating-balloon:hover {
-  transform: scale(1.08);
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }

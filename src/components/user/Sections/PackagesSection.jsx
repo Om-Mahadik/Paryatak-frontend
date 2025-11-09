@@ -6,7 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-// ✅ Import your service
 import { fetchFeaturedPackages } from "../../../services/packageService";
 
 const PackagesSection = () => {
@@ -15,14 +14,12 @@ const PackagesSection = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Handle mobile detection
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Fetch featured packages
   useEffect(() => {
     const getFeaturedPackages = async () => {
       try {
@@ -40,31 +37,42 @@ const PackagesSection = () => {
     getFeaturedPackages();
   }, []);
 
-  if (loading) return <p className="loading">Loading packages...</p>;
   if (error) return <p className="error">{error}</p>;
 
   return (
-    <section className="packages-section" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <h2 className="packages-heading">Top Destinations</h2>
-      <p className="packages-subheadline">
-        Discover the world’s most breathtaking places carefully curated for you.
-      </p>
+    <section className="packages-section">
+      <div className="packages-header">
+        <div>
+          <h2 className="packages-heading">Featured Packages</h2>
+          <p className="packages-subheadline">
+            Discover the world’s most breathtaking places<br></br>curated just for you.
+          </p>
+        </div>
+        <button className="view-all-btn">View All</button>
+      </div>
 
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={20}
-        slidesPerView={isMobile ? 1.1 : 3}
-        centeredSlides={true}
-        loop={packagesData.length > (isMobile ? 1 : 3)}
-        loopFillGroupWithBlank={false} // prevents blank slide at end
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
-      >
-        {packagesData.map((pkg) => (
-          <SwiperSlide key={pkg._id} style={{ display: "flex", justifyContent: "center" }}>
-            <PackageSectionItem {...pkg} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {loading ? (
+        <div className="packages-skeleton">
+          {[...Array(3)].map((_, index) => (
+            <div key={index} className="skeleton-card"></div>
+          ))}
+        </div>
+      ) : (
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={20}
+          slidesPerView={isMobile ? 1.1 : 3}
+          centeredSlides={true}
+          loop={packagesData.length > (isMobile ? 1 : 3)}
+          autoplay={{ delay: 2500, disableOnInteraction: false }}
+        >
+          {packagesData.map((pkg) => (
+            <SwiperSlide key={pkg._id} style={{ display: "flex", justifyContent: "center" }}>
+              <PackageSectionItem {...pkg} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </section>
   );
 };

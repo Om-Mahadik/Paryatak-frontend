@@ -1,0 +1,60 @@
+.bento-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Common block styles */
+.block {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Different shapes */
+.large-rect {
+  grid-column: span 2;
+  grid-row: span 2;
+  background-color: #6c63ff;
+  color: white;
+}
+
+.small-rect {
+  height: 100px;
+  background-color: #ff6584;
+  color: white;
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+  background-color: #3bb273;
+  color: white;
+}
+
+.rect {
+  height: 150px;
+  background-color: #ffa500;
+  color: white;
+}
+
+.circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: #ffcc00;
+  color: white;
+}

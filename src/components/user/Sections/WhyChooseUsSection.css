@@ -1,87 +1,84 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 .why-choose-us {
-  padding: 20px 20px;
-  text-align: center;
-  background: white;
   font-family: 'DM Sans', sans-serif;
+  background-color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  color: #1a1a1a;
 }
 
-.section-heading {
-  font-size: 2.5rem;
+.section-title {
+  font-size: 1.8rem;
   font-weight: 700;
+  color: #114a2f;
   margin-bottom: 10px;
-  color: #111;
 }
 
-.section-subheadline {
-  font-size: 1.2rem;
-  color: #848484;
-  margin-bottom: 50px;
+.section-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 40px;
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 80px;
-  max-width: 1500px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
   margin: 0 auto;
-  margin-top: 80px;
 }
 
 .feature-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  background: #f9fdf9;
+  border-radius: 14px;
+  padding: 28px 18px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
-.feature-icon-circle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
 }
 
 .feature-icon {
-  width: 40px;
-  height: 40px;
+  font-size: 2.2rem;
+  color: #3b8a3b; /* dark professional green */
+  margin-bottom: 14px;
 }
 
 .feature-title {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 10px;
+  color: #222;
+  margin-bottom: 8px;
 }
 
 .feature-subtitle {
-  font-size: 1rem;
-  color: #a2a2a2;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.45;
 }
 
-/* Responsive for tablets */
-@media (max-width: 1024px) {
+/* Responsive */
+@media (max-width: 768px) {
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 18px;
+  }
+
+  .feature-card {
+    padding: 24px 16px;
   }
 }
 
-/* Responsive for phones */
 @media (max-width: 480px) {
   .features-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-}
 
-/* ✅ Use DM Sans everywhere */
-.why-choose-us .section-heading,
-.why-choose-us .section-subheadline,
-.why-choose-us .feature-title,
-.why-choose-us .feature-subtitle {
-  font-family: 'DM Sans', sans-serif;
+  .section-title {
+    font-size: 1.5rem;
+  }
 }

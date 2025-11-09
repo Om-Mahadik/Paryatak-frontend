@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.process-section {
+  font-family: 'DM Sans', sans-serif;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Title and subtitle */
+.process-header {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+
+.process-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+.process-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Stepper */
+.stepper-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: visible;
+  margin-bottom: 2rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.step-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Circles */
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d1d5db; /* gray */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #555;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.circle.active {
+  background-color: #4f46e5; /* primary */
+  color: white;
+  transform: scale(1.2);
+}
+
+/* Connecting line */
+.line-bg {
+  flex: 1;
+  height: 6px;
+  background-color: #d1d5db;
+  position: relative;
+  margin: 0 -2px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.line-fill {
+  height: 100%;
+  background-color: #4f46e5; /* primary */
+  width: 0%;
+  transition: width 2.8s ease-in-out;
+  border-radius: 3px;
+}
+
+/* Step description */
+.step-description {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 1rem auto 0 auto;
+  color: #374151;
+  transition: all 0.3s ease;
+  line-height: 1.5;
+}
+
+/* Responsive: keep horizontal */
+@media (max-width: 768px) {
+  .stepper {
+    gap: 0.3rem;
+    overflow-x: auto;
+    justify-content: center;
+  }
+  .circle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .line-bg {
+    height: 4px;
+  }
+  .process-title {
+    font-size: 1.6rem;
+  }
+  .process-subtitle {
+    font-size: 1rem;
+  }
+}

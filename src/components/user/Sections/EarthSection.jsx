@@ -13,10 +13,9 @@ const EarthSection = () => {
       </div>
 
       <div className="earth-text">
-        <h2>See the World Differently</h2>
+        <h2>Anywhere on Earth, Your Way</h2>
         <p>
-          From tropical islands to mountain escapes — your next adventure starts
-          here. Discover handpicked destinations that inspire travel and joy.
+          Plan journeys to untouched destinations, hidden corners, and breathtaking spots.
         </p>
         <button onClick={() => navigate("/contact")}>Contact Us</button>
       </div>

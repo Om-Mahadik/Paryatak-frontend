@@ -6,6 +6,9 @@ import FlightsIcon from "../../../imgs/icons/flights.svg";
 import TourGuideIcon from "../../../imgs/icons/tour-guide.svg";
 import MealsIcon from "../../../imgs/icons/meals.svg";
 import ActivitiesIcon from "../../../imgs/icons/activities.svg";
+import LocalIcon from "../../../imgs/icons/local.svg";
+import CabIcon from "../../../imgs/icons/cab.svg";
+import HandShakeIcon from "../../../imgs/icons/handshake.svg";
 
 const featuresList = [
   {
@@ -61,7 +64,7 @@ const featuresList = [
   {
     title: "Local Experiences",
     description: "Immerse yourself in the authentic traditions of every destination.",
-    icon: ActivitiesIcon,
+    icon: LocalIcon,
     points: [
       "Village tours & cultural workshops",
       "Traditional art & craft sessions",
@@ -71,7 +74,7 @@ const featuresList = [
   {
     title: "Luxury Transfers",
     description: "Travel comfortably with our reliable and stylish transfer services.",
-    icon: FlightsIcon,
+    icon: CabIcon,
     points: [
       "Private AC cars & minibuses",
       "Pickup & drop from airport/hotel",
@@ -81,7 +84,7 @@ const featuresList = [
   {
     title: "Personal Assistance",
     description: "Our support team is available throughout your trip for any needs.",
-    icon: TourGuideIcon,
+    icon: HandShakeIcon,
     points: [
       "Dedicated travel coordinator",
       "24/7 emergency helpline",

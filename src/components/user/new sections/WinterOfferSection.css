@@ -1,0 +1,239 @@
+/* Winter Offer Section */
+.winter-offer-section {
+  width: 100%;
+  padding: 60px 20px; /* reduced vertical padding */
+  background: #e5e5e53d; /* light grey background */
+  color: #111; /* black text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.offer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.text-area {
+  flex: 1 1 500px;
+  text-align: left;
+}
+
+.offer-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.offer-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.4; /* slightly tighter */
+}
+
+.book-now-btn {
+  background: #111; /* black pill button */
+  color: #fff;
+  padding: 12px 35px; /* slightly smaller */
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-2px);
+  background: #333;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px; /* smaller gap for compact look */
+  flex-wrap: nowrap; /* keep in one row on mobile */
+  justify-content: center;
+  flex: 1 1 auto;
+  margin-top: 10px;
+}
+
+.countdown-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 8px 10px; /* reduced padding */
+  min-width: 55px; /* smaller width */
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.countdown-item span {
+  display: block;
+  font-size: 2.5rem; /* smaller on mobile */
+  font-weight: 700;
+  color: #28a745; /* green digits */
+}
+
+.countdown-item small {
+  display: block;
+  font-size: 1rem;
+  margin-top: 2px;
+  color: #111;
+}
+
+/* Responsive: tablets and below */
+@media (max-width: 1024px) {
+  .offer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .text-area {
+    text-align: center;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .winter-offer-section {
+    padding: 30px 15px; /* less vertical padding */
+  }
+
+  .offer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* tighter gap */
+  }
+
+  .text-area {
+    flex: none; /* remove extra flex-basis */
+    margin-bottom: 0; /* remove extra space */
+    text-align: center;
+  }
+
+  .offer-title {
+    font-size: 2rem;
+    margin-bottom: 10px; /* smaller gap */
+  }
+
+  .offer-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 10px; /* smaller gap below subtitle */
+    line-height: 1.4;
+  }
+
+  .book-now-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .countdown {
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 5px; /* minimal top gap */
+  }
+
+  .countdown-item {
+    padding: 6px 8px;
+    min-width: 45px;
+  }
+
+  .countdown-item span {
+    font-size: 2rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.65rem;
+  }
+}
+
+
+
+
+
+.countdown {
+  display: flex;
+  gap: 15px; /* consistent gap */
+  flex-wrap: wrap; /* allow wrapping if needed on small screens */
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.countdown-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px; /* larger padding */
+  width: 90px;        /* fixed width for all boxes */
+  height: 90px;       /* fixed height for all boxes */
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-item span {
+  font-size: 2.5rem; /* larger digits */
+  font-weight: 700;
+  color: #28a745; /* green digits */
+}
+
+.countdown-item small {
+  font-size: 1rem; 
+  margin-top: 3px;
+  color: #111;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .countdown-item {
+    width: 80px;
+    height: 80px;
+    padding: 12px 15px;
+  }
+
+  .countdown-item span {
+    font-size: 2.2rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .countdown-item {
+    width: 70px;
+    height: 70px;
+    padding: 10px 12px;
+  }
+
+  .countdown-item span {
+    font-size: 1.8rem;
+  }
+
+  .countdown-item small {
+    font-size: 0.75rem;
+  }
+
+  .offer-title {
+    margin-bottom: 20px; /* smaller gap */
+  }
+
+  .offer-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 20px; /* smaller gap below subtitle */
+    line-height: 1.4;
+  }
+}

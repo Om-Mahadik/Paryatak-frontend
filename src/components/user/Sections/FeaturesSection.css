@@ -10,9 +10,10 @@
   /* 🌟 White card background */
   background: #ffffff;
   border-radius: 25px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+
   max-width: 1100px;
   margin: 10px auto;
+  margin-bottom: 50px;
 }
 
 /* 🌐 Desktop layout: icons left, content right */
@@ -154,7 +155,7 @@
   max-width: 400px;
 }
 
-.orbit-points li {
-  margin-bottom: 6px;
-}
+  .orbit-points {
+    display: none;
+  }
 

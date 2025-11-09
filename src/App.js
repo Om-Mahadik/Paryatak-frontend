@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import './index.css'; // or './App.css' if that's your main CSS
+
 
 // -------------------- User Pages --------------------
 import Home from "./pages/Home";

@@ -7,20 +7,23 @@ const RotatingEarth = () => {
   const [showHint, setShowHint] = useState(true);
 
   useEffect(() => {
+    const mountEl = mountRef.current;
+    if (!mountEl) return;
+
     const hintTimer = setTimeout(() => setShowHint(false), 5000);
 
     // Scene, Camera, Renderer
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
-      mountRef.current.clientWidth / mountRef.current.clientHeight,
+      mountEl.clientWidth / mountEl.clientHeight,
       0.1,
       1000
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
-    mountRef.current.appendChild(renderer.domElement);
+    renderer.setSize(mountEl.clientWidth, mountEl.clientHeight);
+    mountEl.appendChild(renderer.domElement);
 
     // 🌍 Earth setup
     const geometry = new THREE.SphereGeometry(2.5, 64, 64);
@@ -51,12 +54,13 @@ const RotatingEarth = () => {
     // 🎯 Rotation control
     let targetRotationX = 0;
     let targetRotationY = 0;
-    let idleRotationSpeed = 0.003; // 🔄 slow visible idle spin
+    let idleRotationSpeed = 0.003;
 
     let userInteracting = false;
     let lastInteractionTime = Date.now();
 
     const onMouseMove = (event) => {
+      if (!mountRef.current) return;
       const rect = mountRef.current.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
@@ -105,15 +109,14 @@ const RotatingEarth = () => {
     };
 
     // 🎞 Animation
+    let animationFrameId;
     const animate = () => {
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
 
-      // if user hasn’t interacted recently, rotate slowly
       const now = Date.now();
       if (now - lastInteractionTime > 2000) {
         earth.rotation.y += idleRotationSpeed;
       } else {
-        // smooth follow to user input
         earth.rotation.x += (targetRotationX - earth.rotation.x) * 0.05;
         earth.rotation.y += (targetRotationY - earth.rotation.y) * 0.05;
       }
@@ -124,6 +127,7 @@ const RotatingEarth = () => {
 
     // 📏 Resize handler
     const handleResize = () => {
+      if (!mountRef.current) return;
       camera.aspect = mountRef.current.clientWidth / mountRef.current.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(mountRef.current.clientWidth, mountRef.current.clientHeight);
@@ -132,28 +136,38 @@ const RotatingEarth = () => {
     window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("deviceorientation", onDeviceOrientation, true);
-    mountRef.current.addEventListener("touchstart", onTouchStart);
-    mountRef.current.addEventListener("touchmove", onTouchMove);
+    mountEl.addEventListener("touchstart", onTouchStart);
+    mountEl.addEventListener("touchmove", onTouchMove);
 
     // 🧹 Cleanup
     return () => {
       clearTimeout(hintTimer);
+      cancelAnimationFrame(animationFrameId);
+
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", onMouseMove);
-      window.removeEventListener("deviceorientation", onDeviceOrientation);
-      mountRef.current.removeEventListener("touchstart", onTouchStart);
-      mountRef.current.removeEventListener("touchmove", onTouchMove);
-      mountRef.current.removeChild(renderer.domElement);
+      window.removeEventListener("deviceorientation", onDeviceOrientation, true);
+
+      if (mountRef.current) {
+        mountRef.current.removeEventListener("touchstart", onTouchStart);
+        mountRef.current.removeEventListener("touchmove", onTouchMove);
+
+        if (renderer.domElement && mountRef.current.contains(renderer.domElement)) {
+          mountRef.current.removeChild(renderer.domElement);
+        }
+      }
+
+      renderer.dispose();
+      geometry.dispose();
+      material.dispose();
+      texture.dispose();
     };
   }, []);
 
   return (
     <div className="earth-container">
       <div ref={mountRef} className="earth-canvas" />
-      {showHint && (
-        <div className="hint-text">
-        </div>
-      )}
+      {showHint && <div className="hint-text"></div>}
     </div>
   );
 };

@@ -6,7 +6,7 @@ const StatsSection = () => {
     { value: 68, label: "Destinations Explored", suffix: "+" },
     { value: 35, label: "Trips Completed", suffix: "+" },
     { value: 800, label: "Happy Travelers", suffix: "+" },
-    { value: 98, label: "Satisfaction Rate", suffix: "%" }, // ✅ percent instead of plus
+    { value: 98, label: "Satisfaction Rate", suffix: "%" },
   ];
 
   const [counts, setCounts] = useState(statsData.map(() => 0));
@@ -15,6 +15,7 @@ const StatsSection = () => {
     const duration = 1500;
     const interval = 20;
     const steps = duration / interval;
+    const timers = [];
 
     statsData.forEach((stat, i) => {
       let currentStep = 0;
@@ -29,7 +30,13 @@ const StatsSection = () => {
         });
         if (currentStep >= steps) clearInterval(timer);
       }, interval);
+      timers.push(timer);
     });
+
+    // ✅ cleanup to prevent errors on unmount
+    return () => {
+      timers.forEach((timer) => clearInterval(timer));
+    };
   }, []);
 
   return (

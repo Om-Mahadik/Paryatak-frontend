@@ -28,6 +28,7 @@ const Navbar = () => {
         <li><Link to="/packages" onClick={handleLinkClick}>Packages</Link></li>
         <li><Link to="/gallery" onClick={handleLinkClick}>Gallery</Link></li>
         <li><Link to="/blogs" onClick={handleLinkClick}>Blogs</Link></li>
+        <li><Link to="/about" onClick={handleLinkClick}>About</Link></li>
         {/* Contact as last nav item in mobile menu */}
         <li className="mobile-contact-btn">
           <Link to="/contact" onClick={handleLinkClick}>Contact Us</Link>

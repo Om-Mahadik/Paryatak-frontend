@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PackageSectionItem from "../Sections/PackageSectionItem";
 import { fetchNationalPackages } from "../../../services/packageService";
-import "./InternationalPackagesSection.css";
+import PackageSkeleton from "./PackageSkeleton"; // Assuming it's in the same folder
+import "./InternationalPackagesSection.css"; // Using same CSS file for consistency
 
 const NationalPackagesSection = () => {
   const [packages, setPackages] = useState([]);
@@ -13,7 +14,7 @@ const NationalPackagesSection = () => {
         const data = await fetchNationalPackages();
         setPackages(data);
       } catch (err) {
-        console.error("Error fetching international packages:", err);
+        console.error("Error fetching national packages:", err);
       } finally {
         setLoading(false);
       }
@@ -22,9 +23,8 @@ const NationalPackagesSection = () => {
     getPackages();
   }, []);
 
-  if (loading) {
-    return <p>Loading national packages...</p>;
-  }
+  // Number of skeleton cards to show during load
+  const skeletonItems = Array(4).fill(0);
 
   return (
     <section className="intl-section">
@@ -35,20 +35,28 @@ const NationalPackagesSection = () => {
 
       {/* Desktop Grid */}
       <div className="intl-grid">
-        {packages.map((pkg) => (
-          <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-link">
-            <PackageSectionItem {...pkg} />
-          </a>
-        ))}
+        {loading
+          ? skeletonItems.map((_, index) => <PackageSkeleton key={index} />)
+          : packages.map((pkg) => (
+              <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-link">
+                <PackageSectionItem {...pkg} />
+              </a>
+            ))}
       </div>
 
       {/* Mobile Horizontal Scroll */}
       <div className="intl-scroll">
-        {packages.map((pkg) => (
-          <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-card">
-            <PackageSectionItem {...pkg} />
-          </a>
-        ))}
+        {loading
+          ? skeletonItems.map((_, index) => (
+              <div key={index} className="intl-card">
+                <PackageSkeleton />
+              </div>
+            ))
+          : packages.map((pkg) => (
+              <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-card">
+                <PackageSectionItem {...pkg} />
+              </a>
+            ))}
       </div>
     </section>
   );

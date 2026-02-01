@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PackageSectionItem from "../Sections/PackageSectionItem";
 import { fetchInternationalPackages } from "../../../services/packageService";
+import PackageSkeleton from "./PackageSkeleton";
 import "./InternationalPackagesSection.css";
 
 const InternationalPackagesSection = () => {
@@ -22,9 +23,8 @@ const InternationalPackagesSection = () => {
     getPackages();
   }, []);
 
-  if (loading) {
-    return <p>Loading international packages...</p>;
-  }
+  // Define how many skeleton cards to show
+  const skeletonItems = Array(4).fill(0);
 
   return (
     <section className="intl-section">
@@ -35,20 +35,28 @@ const InternationalPackagesSection = () => {
 
       {/* Desktop Grid */}
       <div className="intl-grid">
-        {packages.map((pkg) => (
-          <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-link">
-            <PackageSectionItem {...pkg} />
-          </a>
-        ))}
+        {loading
+          ? skeletonItems.map((_, index) => <PackageSkeleton key={index} />)
+          : packages.map((pkg) => (
+              <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-link">
+                <PackageSectionItem {...pkg} />
+              </a>
+            ))}
       </div>
 
       {/* Mobile Horizontal Scroll */}
       <div className="intl-scroll">
-        {packages.map((pkg) => (
-          <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-card">
-            <PackageSectionItem {...pkg} />
-          </a>
-        ))}
+        {loading
+          ? skeletonItems.map((_, index) => (
+              <div key={index} className="intl-card">
+                <PackageSkeleton />
+              </div>
+            ))
+          : packages.map((pkg) => (
+              <a key={pkg._id} href={pkg.slug ? `/packages/${pkg.slug}` : "#"} className="intl-card">
+                <PackageSectionItem {...pkg} />
+              </a>
+            ))}
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import './index.css'; // or './App.css' if that's your main CSS
 import Home from "./pages/Home";
 import UserLayout from "./components/user/layout/UserLayout";
 import ContactUs from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import Gallery from "./pages/Gallery";
 import UserPackages from "./pages/Packages"; // Renamed for user
 import PackageDetailPage from "./pages/Packages/PackageDetailPage";
@@ -64,6 +65,15 @@ function App() {
           element={
             <UserLayout>
               <ContactUs />
+            </UserLayout>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <UserLayout>
+              <AboutUs />
             </UserLayout>
           }
         />

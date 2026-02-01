@@ -34,12 +34,14 @@ const Home = () => {
       <FeaturesSection />
 
       
-      <WinterOfferSection />
       <EarthSection />
       <OurProcessSection />
       <ReviewsSection />
+      <HeroSection />
       <WhyChooseUsSection />
       <FAQSection />
+      
+      
 
 
 

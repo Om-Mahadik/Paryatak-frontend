@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+:root {
+  --primary: #146f09;
+  --primary-soft: #ffffff;
+  --text-dark: #0f172a;
+  --text-light: #64748b;
+  --white: #ffffff;
+}
+
+.about-container {
+  width: 100%;
+  padding: 100px 20px;
+  background: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: var(--text-dark);
+}
+
+.about-hero {
+  max-width: 800px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.badge {
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 span {
+  color: var(--primary);
+}
+
+.about-hero p {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Layout Grid */
+.about-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-card {
+  background: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+/* Services Style */
+.services-wrapper h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.09);
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.s-icon { font-size: 2rem; }
+.service-item h4 { font-weight: 700; margin-bottom: 5px; }
+.service-item p { font-size: 0.9rem; color: var(--text-light); }
+
+/* The Highlight Box */
+.highlight-box {
+  background: linear-gradient(135deg, rgb(105, 188, 77), #6ac26a);
+  color: white;
+  text-align: center;
+}
+
+.highlight-box h2, .highlight-box p { color: white; }
+
+/* Footer */
+.about-footer {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.about-footer h3 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.cta-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 30px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(10, 60, 255, 0.2);
+}
+
+/* Mobile Friendly */
+@media (max-width: 768px) {
+  .about-hero { padding: 0 10px; }
+  .about-container { padding: 60px 16px; }
+  .about-card { padding: 30px; }
+  .services-grid { grid-template-columns: 1fr; }
+}
